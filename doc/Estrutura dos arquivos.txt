@@ -1,0 +1,9 @@
+tjsp-site/
+│
+├── index.html
+├── consulta-aviso.html
+├── consulta-comunicacao.html
+├── consulta-processo.html
+├── peticionamento.html
+├── consulta-alteracao.html
+└── confirmacao.html

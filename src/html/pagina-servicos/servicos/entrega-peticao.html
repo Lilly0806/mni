@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entregar Petição </title>
+  <link rel="stylesheet" href="../../../../recursos/css/style.css">
+</head>
+<body>
+  <header>
+<img src="../../../../recursos/img/brasao.png">   
+    Tribunal de Justiça do Estado de São Paulo
+  </header>
+  <main>
+    <h1>SERVIÇOS DISPONÍVEIS DO MNI 3.0.
+			<br>entregarPeticao<p>
+</h1>
+    <p><strong>Descrição:</strong>
+	<br>Tipo de elemento que encapsula os dados do peticionamento incidental. Deve ser informado o número do processo para o qual é dirigida a manifestação. .<br><p>
+	
+	<strong>Parâmetros (*campos opcionais*): </strong>
+	<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou 
+	certificado digital. Visa tornar mais ágil o processo de autenticação, 
+	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.<br><p>
+	
+	<strong>Autenticação simples*</strong>
+	<br><strong>usuario:</strong> Identificação do usuário 
+		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) <p>
+		
+		<strong>Autenticação Certificada* </strong>
+		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. 
+		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
+		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
+		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.
+		<br><strong>codificacaoCadeiaCertificado:</strong> Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação,
+		de forma que as implementações cliente não devem contar com esse tipo de tratamento. <p>
+		
+		<strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às credenciais da pessoa solicitadora da autenticação. Alguns exemplos de uso: 
+		CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às credenciais institucionais da procuradoria. 
+		
+		<p><strong>numeroProcesso:</strong>  Número do processo judicial.</p>
+		<p><strong>idDocumento*: </strong>Lista de identificadores dos documentos que se pretende recuperar com essa operação. Caso um dos documentos indicados seja parte de 
+		ato de comunicação processual ainda não visualizada pelo consultante, o tribunal fornecedor do serviço poderá enviar esse documento de forma encriptada, utilizando o 
+		algoritmo SHA-1 para gerar um hash do documento a ser utilizado como chave de encriptação. O algoritmo de encriptação utilizado será informado pelo tribunal. </p>
+		<p><strong>idDocumentoVinculado*: </strong></p>Elemento destinado a permitir a vinculação de um ou mais documentos à movimentação.
+		<p><strong>codigoTipoDocumento: </strong>Atributo destinado a permitir a indicação do código do tipo de documento que está sendo enviado. (Procurar os tipos de petição na tabela TipoDocumento nas tabelas de apoio) </p>
+		<p><strong>dataHora*: </strong>Atributo destinado a indicar o momento em que foi realizada a movimentação. </p>
+		<p><strong>nivelSigilo*: </strong>Nível de sigilo a ser aplicado ao processo</p>
+		<p><strong>idMovimento*: </strong>Atributo destinado a permitir a identificação do movimento relacionado com a produção deste documento. </p>
+		<p><strong>descricao*: </strong>Descrição do documento elaborada pelo peticionante. </p>
+		<p><strong>codigoTipoDocumentoLocal*: </strong>Indica o código local do tipo deste documento. </p>
+		<p><strong>mimetype: </strong>Atributo destinado a auxiliar as aplicações a identificar o conteúdo do documento quando se tratar de documento binário.
+		Os entes que implementam o modelo devem aceitar, no mínimo, os tipos "application/pdf" e "text/html". </p>
+		<p><strong>encoding*: </strong>Elemento opcional destinado a descrever a codificação de caracteres do documento binário, como 'UTF-8' e 'ISO-8859-1'. Caso não informado, assume o valor 'UTF-8' 
+		como padrão</p>
+		<p><strong>hash*: </strong>Resumo matemático do documento. </p>
+		<p><strong>algoritmo*: </strong>Algoritmo utilizado para o cálculo do resumo matemático. Recomenda-se o uso de SHA-256 ou superior. </p>
+		<p><strong>conteudo: </strong>Elemento destinado a armazenar o conteúdo do documento em formato binário. </p>
+		<p><strong>signatarioLogin: </strong>Tipo complexo destinado a permitir a identificação de signatários de documentos caso a assinatura tenha sido feita 
+		com o uso de login e senha, sem prejuízo da obrigatoriedade de o sistema cliente assinar eletronicamente o documento no padrão ICP-Br quando do envio. </p>
+		<p><strong>Identificador*: </strong>Código de inscrição do signatário no cadastro do Ministério da Fazenda do Brasil, que pode ser CPF ou CNPJ. </p>
+		<p><strong>dataHora*: </strong>Data e hora em que a assinatura foi originalmente aposta pelo signatário. </p>
+		<p><strong>assinatura*: </strong>Hash da assinatura, em base64. </p>
+		<p><strong>dataAssinatura*: </strong>Data e hora em que a assinatura se concretizou. </p>
+		<p><strong>cadeiaCertificado*: </strong>Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. </p>
+		<p><strong>algoritmo*: </strong>A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256. </p>
+		<p><strong>codificacaoCadeiaCertificado</strong>Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM,
+		e, quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio 
+		equivocado da informação, de forma que as implementações cliente não devem contar com esse tipo de tratamento. </p>
+		<p><strong>documentoVinculado*: </strong>Documento vinculado a este documento. </p>
+		<pre>
+			&lt;int:documentoVinculado documentoVinculado="82400092"/&gt;
+			</pre>
+		<br>Utilizar neste formato. Requisição não deu erro, mas como recuperar essa informação? 
+		<br>Foi possível colocar qualquer número que a petição passou sem problema.</br>
+
+		
+		<p><strong>justica*: </strong>Identifica o órgão ou segmento de Justiça. Podem ser: - 1: Supremo Tribunal Federal; - 2: Conselho Nacional de Justiça; 
+		- 3: Superior Tribunal de Justiça; - 4: Justiça Federal; - 5: Justiça do Trabalho; - 6: Justiça Eleitoral; - 7: Justiça Militar da União; 
+		- 8: Justiça dos Estados e do Distrito Federal e Territórios; - 9: Justiça Militar Estadual. </p>
+		<p><strong>tribunal*: </strong>Identifica o tribunal do respectivo segmento de Justiça. </p>
+		<p><strong>unidade*: </strong>Identifica a unidade de origem do processo judicial, observadas as estruturas administrativas de cada segmento de Justiça. </p>
+		<p><strong>tamanhoConteudo*: </strong>Quantidade aproximada, em bytes, do conteúdo do documento. </p>
+		
+		<pre>&lt;int:outroParametro nome="NomeDocumentoUsuario" valor="teste.pdf"/&gt; </pre>
+		
+		<br>No peticionamento pelo serviço do MNI é possível informar o nome original do arquivo através do parâmetro NomeDocumentoUsuario.
+		Caso não informado este parâmetro, o Eproc assumirá o nome id_externo_X.XXX como sendo o nome do arquivo. </br>
+		
+		<p><pre>&lt;int:outroParametro nome="ObsDocumento" valor="ObsDocumentoTeste"/&gt; </pre></p>
+		<br>É possível também informar uma observação associada ao documento através do parâmetro ObsDocumento. Esse parâmetro é igualmente opcional. </br>
+		
+		<pre>&lt;int:parametros nome="identProcuradorRepresentacao" valor="27717733846"/&gt; </pre>
+			<pre>&lt;int:parametros nome="tipoIdentProcuradorRepresentacao" valor="CPF"/&gt;</pre>
+		
+			
+			<br>indica o peticionante quando a autenticação é feita com usuário de sistema. Não é obrigatório, mas é interessante que seja sempre preenchido. 
+			<br>Se preenchido com um procurador inexistente o sistema não apresenta erro, mas aparece o usuário vinculado à entidade como peticionante. </br>
+
+		
+		<p><strong>dataEnvio*: </strong>A data do envio na origem.  Pode ser informada no formato AAAAMMDDHHMMSS. </p>
+		
+		<pre>
+			&lt;tip:outroParametro nome="identProcuradorSubstabelecido" valor="xxxxxxxxxxx"/&gt;  
+			&lt;tip:outroParametro nome="tipoIdentProcuradorSubstabelecido" valor="CPF"/&gt;  
+			&lt;tip:outroParametro nome="identParteSubstabelecimento" valor="27717733846"/&gt;  
+			&lt;tip:outroParametro nome="tipoSubstabelecimento" valor="C"/&gt;
+			</pre>
+			
+			<br>O procurador substabelecido deve ser indicado pelos parâmetros identProcuradorSubstabelecido (por exemplo, o número do CPF)
+			e tipoIdentProcuradorSubstabelecido (seguindo com o exemplo, CPF). </br>
+			<br>O procurador substabelecente é quem faz a requisição ao webservice. </br>
+			<br>A parte deve ser indicada pelo parâmetro identParteSubstabelecimento, que deve conter o CPF ou CNPJ da parte. </br>
+			<br>O tipo do substabelecimento deve ser indicado pelo parâmetro tipoSubstabelecimento: </br>
+			<br>C para inclusão, S para substituição, T para substituição transitória, ou T para retorno da substituição transitória. </br>
+
+		
+		
+		<p><strong>Outros Parâmetros </strong></p>
+			
+			<pre>
+			<strong>Colocar abaixo da tag </strong>&lt;/tip:documentos&gt; 
+			&lt;int:parametros nome="prioridade" valor="X"/&gt;
+			</pre>
+			
+			<br>Ao realizar uma petição intermediária, é possível definir uma prioridade de acordo com o parâmetro “prioridade”. Os valores possíveis são: 
+			1 - Liminar/Antecipação de Tutela 2 - Internação 3 - Busca e Apreensão 4 - Alvará de Soltura 5 - Revogação de Prisão 6 - Pedido de Alvará 
+			7 - Pedido de Liberação de Valores 8 - Processo com sessão/audiência designada. </br>
+			
+			<pre>&lt;tip:parametros nome="identificadorComunicacao" valor="xxxxxxxxxxxxxxx"/&gt;</pre>
+			<br>O parâmetro identificadorComunicacao pode ser utilizado no peticionamento intermediário para indicar a intenção de fechamento de um prazo específico. 
+			O conteúdo do campo deve ser o idAviso retornado na consulta de avisos pendentes. </br>
+			<br>O prazo referenciado pelo parâmetro acima deve estar com status Aberto. Caso este esteja com status Aguardando Abertura, o Eproc retornará a mensagem 
+			“O Prazo ainda nao foi aberto. O parametro abrirPrazoAutomaticamente deve ser passado com o valor true para a abertura.” </br>
+			
+			<pre>
+			&lt;tip:parametros nome="identificadorComunicacao" valor="xxxxxxxxxxxxxxx"/&gt;  
+			&lt;tip:parametros nome="abrirPrazoAutomaticamente" valor="true"/&gt;
+			</pre>
+			<br>Caso o manifestante deseje fechar o prazo, independente do prazo estar com status Aguardando Abertura ou Aberto, pode informar o 
+			parâmetro abrirPrazoAutomaticamente em conjunto com o identificadorComunicacao. </br>
+			
+			<pre>
+			&lt;tip:parametros nome="abrirPrazoAutomaticamente" valor="true"/&gt;
+			&lt;tip:parametros nome="identEncerraPrazos" valor="xxxxxxxxxxxxxxx"/&gt;  
+			
+			</pre>
+			
+			<br>O parâmetro identEncerraPrazos pode ser utilizado para indicar a intenção de fechamento de todos os prazos relacionados a uma determinada parte. 
+			O conteúdo do campo deve ser o CPF ou CNPJ da parte cujos prazos relacionados deseja-se fechar no peticionamento. </br>
+			<br>Funciona em conjunto com abrirPrazoAutomaticamente. </br><p>
+
+		
+
+
+
+		<script>
+	function copiarCodigo(id) {
+  const codigo = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(codigo);
+  alert("Código copiado!");
+	}
+	</script>
+
+			<strong>Requisição</strong>
+	
+		<div class="code-box">
+  <pre><code id="codigoXML">
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v300="http://www.cnj.jus.br/mni/v300/" xmlns:tip="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:int="http://www.cnj.jus.br/mni/v300/intercomunicacao"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;v300:requisicaoEntregarPeticao&gt;
+         &lt;tip:manifestante&gt;
+            &lt;!--You have a CHOICE of the next 3 items at this level--&gt;
+            &lt;!--&lt;int:token&gt;?&lt;/int:token&gt;--&gt;
+            &lt;int:autenticacaoSimples&gt;
+               &lt;int:usuario&gt;USUARIO&lt;/int:usuario&gt;
+               &lt;int:senha&gt;SENHA&lt;/int:senha&gt;
+            &lt;/int:autenticacaoSimples&gt;
+            &lt;!--
+            &lt;int:autenticacaoCertificada&gt;
+               &lt;int:assinatura&gt;cid:1411345145622&lt;/int:assinatura&gt;
+               &lt;int:dataAssinatura&gt;?&lt;/int:dataAssinatura&gt;
+               &lt;int:cadeiaCertificado&gt;?&lt;/int:cadeiaCertificado&gt;
+               &lt;int:algoritmo&gt;sha256WithRSAEncryption&lt;/int:algoritmo&gt;
+               &lt;int:codificacaoCadeiaCertificado&gt;PEM&lt;/int:codificacaoCadeiaCertificado&gt;
+            &lt;/int:autenticacaoCertificada&gt;
+            --&gt;
+            &lt;!--Optional:--&gt;
+            &lt;!--&lt;int:pessoaVinculada&gt;?&lt;/int:pessoaVinculada&gt;--&gt;
+         &lt;/tip:manifestante&gt;
+         &lt;tip:numeroProcesso&gt;NUMERO PROCESSO&lt;/tip:numeroProcesso&gt;
+         &lt;!--1 or more repetitions:--&gt;
+         &lt;tip:documentos&gt;
+            &lt;!--&lt;int:idDocumento&gt;?&lt;/int:idDocumento&gt;--&gt;
+            &lt;int:codigoTipoDocumento&gt;82400092&lt;/int:codigoTipoDocumento&gt;
+            &lt;int:conteudo&gt;
+               &lt;int:mimetype&gt;application/pdf&lt;/int:mimetype&gt;
+               &lt;int:conteudo&gt;&lt;/int:conteudo&gt;
+            &lt;/int:conteudo&gt;
+            &lt;int:documentoVinculado/&gt;
+            &lt;int:outroParametro nome="NomeDocumentoUsuario" valor="TEXTO LIVRE.pdf"/&gt;
+            &lt;int:outroParametro nome="ObsDocumento" valor="ObsDocumentoTeste"/&gt;
+            &lt;int:parametros nome="identProcuradorRepresentacao" valor="NUMERO CPF"/&gt;
+            &lt;int:parametros nome="tipoIdentProcuradorRepresentacao" valor="CPF"/&gt;
+         &lt;/tip:documentos&gt;
+      &lt;/v300:requisicaoEntregarPeticao&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+  </code></pre>
+  <button onclick="copiarCodigo('codigoXML')">Copiar</button>
+	</div>
+
+<p>
+		<strong>Resposta</strong>
+		
+<div class="code-box">
+  <pre><code id="codigoSOAP">
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+                   xmlns:ns1="http://www.cnj.jus.br/mni/v300/intercomunicacao" 
+                   xmlns:ns2="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" 
+                   xmlns:ns3="http://www.cnj.jus.br/mni/v300/" 
+                   xmlns:xmime="http://www.w3.org/2005/05/xmlmime" 
+                   xmlns:xop="http://www.w3.org/2004/08/xop/include"&gt;
+   &lt;SOAP-ENV:Body&gt;
+      &lt;ns3:respostaEntregarPeticao&gt;
+         &lt;ns2:recibo&gt;
+            &lt;ns1:recibo&gt;
+               &lt;ns1:sucesso&gt;true&lt;/ns1:sucesso&gt;
+               &lt;ns1:mensagens&gt;
+                  &lt;ns1:descritivo&gt;Petição processada com sucesso.&lt;/ns1:descritivo&gt;
+                  &lt;ns1:codigo&gt;0&lt;/ns1:codigo&gt;
+                  &lt;ns1:codigoUnico/&gt;
+                  &lt;ns1:tipo&gt;INFORMACAO&lt;/ns1:tipo&gt;
+               &lt;/ns1:mensagens&gt;
+            &lt;/ns1:recibo&gt;
+            &lt;ns1:numeroProtocolo&gt;611754596372619087042764604636&lt;/ns1:numeroProtocolo&gt;
+            &lt;ns1:dataOperacao&gt;2025-08-07T16:52:52-03:00&lt;/ns1:dataOperacao&gt;
+            &lt;ns1:documentoComprovante&gt;
+               &lt;xop:Include href="cid:urn:uuid:9f20f979-7a54-481d-93f2-637271cb9a9a"/&gt;
+            &lt;/ns1:documentoComprovante&gt;
+            &lt;ns1:reciboDocumentos&gt;
+               &lt;ns1:hashDocumento/&gt;
+               &lt;ns1:dataRecebimento/&gt;
+               &lt;ns1:numeroProcesso&gt;40039215520258260960&lt;/ns1:numeroProcesso&gt;
+            &lt;/ns1:reciboDocumentos&gt;
+         &lt;/ns2:recibo&gt;
+      &lt;/ns3:respostaEntregarPeticao&gt;
+   &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+  </code></pre>
+  <button onclick="copiarCodigo('codigoSOAP')">Copiar</button>
+</div>
+
+  </main>
+  <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
+</body>
+</html>
