@@ -72,7 +72,7 @@ nav li {
 
 nav a {
   display: block;
-  padding: 12px 20px;
+  padding: 15px 20px;
   color: white;
   text-decoration: none;
 }
@@ -118,11 +118,13 @@ main {
   padding: 20px;
 }
 
-h1, h2 {
+h1,h2{
   text-align: center;
+  font-size: medium
   color: #000;
 }
-	
+
+
 	 /* Menu de acesso */
 .menu {
   display: flex;
@@ -280,6 +282,18 @@ img {
 }
 
 .btn-copiar img {
-  width: 50px;  /* ajuste o tamanho se quiser */
-  height: 50px;
+  width: 40px;  /* ajuste o tamanho se quiser */
+  height: 30px;
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0072ce;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
