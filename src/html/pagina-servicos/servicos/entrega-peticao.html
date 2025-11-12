@@ -8,13 +8,35 @@
 </head>
 <body>
   <header>
-<img src="../../../../recursos/img/brasao.png">   
+<a href="../../../../index.html">
+<img src="../../../../recursos/img/brasao.png" alt="Brasão do TJSP"></a>
     Tribunal de Justiça do Estado de São Paulo
   </header>
   <main>
     <h1>SERVIÇOS DISPONÍVEIS DO MNI 3.0.
 			<br>entregarPeticao<p>
 </h1>
+
+ <nav>
+    <ul>
+      <li><a href="../../../../index.html">Início</a></li>
+      <li class="dropdown">
+        <a href="#">Serviços ▼</a>
+        <div class="dropdown-content">
+          <a href="../../pagina-servicos/servicomni.html" >MNI 3.0</a>
+           <a href="../../pagina-servicos/servicomni2.html" >MNI 2.2</a>
+        </div>
+      </li>  
+     <li class="dropdown">
+        <a href="#">Endereço de Acesso MNI ▼</a>
+        <div class="dropdown-content">
+		    <a href="../../pagina-enderecos/mni3.html"> MNI 3.0</a>
+        </div>
+      </li>
+	 
+    </ul>
+  </nav>
+
     <p><strong>Descrição:</strong>
 	<br>Tipo de elemento que encapsula os dados do peticionamento incidental. Deve ser informado o número do processo para o qual é dirigida a manifestação. .<br><p>
 	
@@ -208,8 +230,9 @@
    &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
   </code></pre>
-  <button onclick="copiarCodigo('codigoXML')">Copiar</button>
-	</div>
+<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>	</div>
 
 <p>
 		<strong>Resposta</strong>
@@ -249,8 +272,9 @@
    &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
   </code></pre>
-  <button onclick="copiarCodigo('codigoSOAP')">Copiar</button>
-</div>
+<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button></div>
 
   </main>
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>

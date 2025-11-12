@@ -8,13 +8,42 @@
 </head>
 <body>
   <header>
-<img src="../../../../recursos/img/brasao.png">   
+<a href="../../../../index.html">
+<img src="../../../../recursos/img/brasao.png" alt="Brasão do TJSP"></a>
     Tribunal de Justiça do Estado de São Paulo
   </header>
   <main>
     <h1>SERVIÇOS DISPONÍVEIS DO MNI 3.0.
 			consultarClasses<p>
 </h1>
+
+ <div id="menu-container"></div>
+
+     <nav>
+    <ul>
+      <li><a href="../../../../index.html">Início</a></li>
+
+      <li class="dropdown">
+        <a href="#">Serviços ▼</a>
+        <div class="dropdown-content">
+
+          <a href="../../pagina-servicos/servicomni.html" >MNI 3.0</a>
+           <a href="../../pagina-servicos/servicomni2.html" >MNI 2.2</a>
+
+	
+        </div>
+      </li>
+      
+     <li class="dropdown">
+        <a href="#">Endereço de Acesso MNI ▼</a>
+        <div class="dropdown-content">
+		    <a href="../../pagina-enderecos/mni3.html"> MNI 3.0</a>
+        </div>
+      </li>
+	 
+    </ul>
+  </nav>
+
     <p><strong>Descrição:</strong>
 	<br>Permite obter a listagem de todas as classes de uma determinada localidade judicial, informando como parâmetro o
 	código da localidade que se deseja consultar, e também o código da competência (opcional). <br><p>
@@ -29,7 +58,10 @@
 
 
 
-		<script>
+
+
+
+<script>
 	function copiarCodigo(id) {
   const codigo = document.getElementById(id).innerText;
   navigator.clipboard.writeText(codigo);
@@ -52,10 +84,20 @@
   &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
   </code></pre>
-  <button onclick="copiarCodigo('codigoXML')">Copiar</button>
+<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
 	</div>
 
 <p>
+
+<script>
+	function copiarCodigo(id) {
+  const codigo = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(codigo);
+  alert("Código copiado!");
+	}
+	</script>
 		<strong>Resposta</strong>
 		
 <div class="code-box">
@@ -95,9 +137,10 @@
     &lt;/ns3:respostaConsultarClasses&gt;
   &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
-  </code></pre>
-  <button onclick="copiarCodigo('codigoSOAP')">Copiar</button>
-</div>
+ <button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 
   </main>
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
