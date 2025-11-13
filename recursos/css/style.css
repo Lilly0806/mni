@@ -297,3 +297,41 @@ img {
   z-index: 1;
 }
 
+
+/* 1. Prepara o contêiner (o <header>) para posicionamento absoluto e centralização */
+header {
+    /* Define o ponto de referência para o botão (absolute) */
+    position: relative; 
+    
+ 
+    /* Opcional: Altura mínima para que o posicionamento funcione bem */
+    min-height: 50px; 
+    
+    /* Centraliza o texto (o link <a> do TJSP) horizontalmente */
+    text-align: center;
+}
+
+/* 2. Aplica o posicionamento absoluto APENAS ao botão de voltar (ou seu <div> pai) */
+.btn-voltar {
+    /* Retira o botão do fluxo normal e o permite flutuar */
+    position: absolute; 
+    
+    /* Move o botão para o canto direito do <header> (pai com position: relative) */
+    right: 20px; 
+    
+    /* Alinha o botão verticalmente ao centro do <header> */
+    top: 50%; 
+    
+    /* Truque para centralizar verticalmente, compensando 50% da PRÓPRIA altura do botão */
+    transform: translateY(-50%); 
+}
+
+/* 4. Efeito de Hover (opcional, para feedback visual) */
+.btn-voltar :hover {
+    opacity: 0.8; /* Diminui um pouco a opacidade ao passar o mouse */
+}
+
+.btn-voltar img {
+    height: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+    width: auto; /* Mantém a proporção */
+
