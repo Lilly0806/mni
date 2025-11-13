@@ -46,6 +46,7 @@ header img {
 	
 nav {
   background-color: #125DFF;
+
   display: flex;
   justify-content: center;
 }
@@ -78,14 +79,14 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #005fa3;
+  background-color: #125DFF;
 }
 
     /* Dropdown */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #0072ce;
+  background-color: #125DFF;
   min-width: 200px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 1;
@@ -100,7 +101,7 @@ nav a:hover {
 }
 
 .dropdown-content a:hover {
-  background-color: #005fa3;
+  background-color: #125DFF;
 
 }
 
@@ -140,7 +141,7 @@ h1,h2{
 .menu a {
   display: inline-block;
   padding: 12px 25px;
-  background-color: #0072ce;
+  background-color: #125DFF;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -148,7 +149,7 @@ h1,h2{
 }
 
 .menu a:hover {
-  background-color: #005fa3;
+  background-color: #125DFF;
 }
 
 footer {
@@ -188,7 +189,7 @@ footer {
   border-radius: 0;
   cursor: pointer;
 }
-.code-box button:hover { background: #005fa3; 
+.code-box button:hover { background: #125DFF; 
 }
 
  pre {
@@ -208,7 +209,7 @@ footer {
   .nav {
     display: none;
     flex-direction: column;
-    background: #1565c0;
+    background: #125DFF;
     position: absolute;
     top: 60px;
     right: 0;
@@ -286,30 +287,19 @@ img {
   height: 30px;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #0072ce;
-  min-width: 200px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 1;
-}
 
+
+/* Seu arquivo de estilos (por exemplo, style.css) */
 
 /* 1. Prepara o contêiner (o <header>) para posicionamento absoluto e centralização */
 header {
-    /* Define o ponto de referência para o botão (absolute) */
     position: relative; 
-    
- 
-    /* Opcional: Altura mínima para que o posicionamento funcione bem */
+
     min-height: 50px; 
     
     /* Centraliza o texto (o link <a> do TJSP) horizontalmente */
     text-align: center;
-	background-color: #1449ff;
+    background-color: #1449ff;
     box-sizing: border-box;
 }
 
@@ -330,7 +320,8 @@ header {
 
 /* 4. Efeito de Hover (opcional, para feedback visual) */
 .btn-voltar :hover {
-	  background-color: rgba(240, 216, 216, 0.2); /* Fundo branco semi-transparente para destaque */
+   
+    background-color: rgba(240, 216, 216, 0.2); /* Fundo branco semi-transparente para destaque */
     cursor: pointer; /* Indica que é clicável */
 }
 
@@ -339,4 +330,6 @@ header {
     width: auto; /* Mantém a proporção */
 
 
-	
+
+
+
