@@ -309,6 +309,8 @@ header {
     
     /* Centraliza o texto (o link <a> do TJSP) horizontalmente */
     text-align: center;
+	background-color: #1449ff;
+    box-sizing: border-box;
 }
 
 /* 2. Aplica o posicionamento absoluto APENAS ao botão de voltar (ou seu <div> pai) */
@@ -328,10 +330,13 @@ header {
 
 /* 4. Efeito de Hover (opcional, para feedback visual) */
 .btn-voltar :hover {
-    opacity: 0.8; /* Diminui um pouco a opacidade ao passar o mouse */
+	  background-color: rgba(240, 216, 216, 0.2); /* Fundo branco semi-transparente para destaque */
+    cursor: pointer; /* Indica que é clicável */
 }
 
 .btn-voltar img {
     height: 50px; /* Ajuste o tamanho da imagem conforme necessário */
     width: auto; /* Mantém a proporção */
 
+
+	
