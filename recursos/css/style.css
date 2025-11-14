@@ -321,7 +321,6 @@ header {
 /* 4. Efeito de Hover (opcional, para feedback visual) */
 .btn-voltar :hover {
    
-    background-color: rgba(240, 216, 216, 0.2); /* Fundo branco semi-transparente para destaque */
     cursor: pointer; /* Indica que é clicável */
 }
 
