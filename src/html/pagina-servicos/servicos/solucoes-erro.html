@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erros e Possíveis Soluções</title>
+	<link rel="stylesheet" href="../../../../recursos/css/style.css">
+</head>
+<body>
+  <header>
+<a href="../../../../index.html">
+<img src="../../../../recursos/img/brasao.png" alt="Brasão do TJSP"></a>  
+    Tribunal de Justiça do Estado de São Paulo
+
+	<a href="../../../../index.html"  
+   class="btn-voltar" 
+   title="Voltar para a Página Inicial"> <img src="../../../../recursos/img/btn-voltar.png" alt="Voltar para a página inicial">
+</a>
+
+
+  </header>
+  <main>
+    <h1>SERVIÇOS DISPONÍVEIS DO MNI 3.0.
+		<br>Erros e possíveis soluções<p></br>
+	</h1>
+    <nav>
+    <ul>
+      <li><a href="../../../../index.html">Início</a></li>
+      <li class="dropdown">
+        <a href="#">Serviços ▼</a>
+        <div class="dropdown-content">
+          <a href="../../pagina-servicos/servicomni.html" >MNI 3.0</a>
+           <a href="../../pagina-servicos/servicomni2.html" >MNI 2.2</a>
+        </div>
+      </li>  
+     <li class="dropdown">
+        <a href="#">Endereço de Acesso MNI ▼</a>
+        <div class="dropdown-content">
+		    <a href="../../pagina-enderecos/mni3.html"> MNI 3.0</a>
+        </div>
+      </li>
+	 
+    </ul>
+  </nav>
+
+
+<body>
+			<pre><code>&lt;ns1:descritivo&gt;Atributo [ArrSeqProcessoEvento] não recebeu valor.
+			<br>[Identificador: CFSxCpkBOzdgV_oGpu17]&lt;/ns1:descritivo&gt;</pre></code>
+			<br>No agravo de instrumento é necessário informar a qual decisão o agravo se refere, conforme parâmetro abaixo. 
+			O valor do parâmetro deve corresponder ao evento de decisão que está sendo agravada.</br>
+
+				<pre><code>	&lt;tip:parametros nome="seqEventoAgravado" valor="9"/&gt;</pre></code>
+				
+	
+			<pre><code>&lt;ns1:descritivo&gt;Erro localizando Pessoa: Não foi possível achar o mesmo tipo
+			<br>de usuário de TJSP em SP (DPE-34158926890, 0). [Identificador: 
+			<br>ElXMCpkBOzdgV_oGJQBY]&lt;/ns1:descritivo&gt;
+			<br><strong>Confirmar se os dados do peticionante estão iguais no 1g e 2g.</strong></br></pre></code>
+			
+		
+			
+			<p><pre><code>&lt;ns1:descritivo&gt;É necessário informar o procurador por parâmetro ou assinar 
+			<br>o documento. [Identificador: DVVvC5kBOzdgV_oGu3Fh]&lt;/ns1:descritivo&gt;</p>
+			<br><strong>Preencher com as tags abaixo:</strong></br>
+			<br>&lt;int:parametros nome="identProcuradorRepresentacao" 
+			<br>valor="numerocpf"/&gt;&lt;int:parametros nome="tipoIdentProcuradorRepresentacao" 
+			<br>valor="CPF"/&gt;</pre></code>
+			
+			<p><pre><code>&lt;ns1:descritivo&gt;Não encontrou nenhum usuário com a identificação [CPF] 
+			<br>igual á [12345678912] [Identificador: oVelD5kBOzdgV_oGItv4]&lt;/ns1:descritivo&gt;</br></p>
+				<br><strong>Preencher com as tags abaixo com um usuário válido:</strong></br>
+			<br>&lt;int:parametros nome="identProcuradorRepresentacao" 
+			<br>valor="numerocpf"/&gt;&lt;int:parametros nome="tipoIdentProcuradorRepresentacao" 
+			<br>valor="CPF"/&gt;
+
+			</pre></code>
+			
+			<pre><code>&lt;ns1:descritivo&gt;O procurador [82767636009] não pode ser encontrado. 
+			<br>[Identificador: 11enD5kBOzdgV_oGDNy5]&lt;/ns1:descritivo&gt;
+				<br><strong>Preencher com as tags abaixo com um usuário procurador válido:</strong></br>
+				<br>&lt;int:parametros nome="identProcuradorRepresentacao" 
+				<br>valor="numerocpf"/&gt;&lt;int:parametros nome="tipoIdentProcuradorRepresentacao"
+				<br>valor="CPF"/&gt;</pre></code>
+				
+			<pre><code>&lt;ns1:descritivo&gt;É necessário informar evento(s) de sentença/despacho 
+			<br>válido(s) para o agravo [Identificador: HFsbFZkBOzdgV_oGORLj]&lt;/ns1:descritivo&gt;</br>
+				<br>&lt;tip:parametros nome="seqEventoAgravado" valor="8"/&gt;</br>
+				<br><strong>O valor deve ser uma referência a uma Decisão/Sentença/Despacho. </br>
+				<br>Também aceitou contra “Certidão juntada” e “Ato ordinatório praticado”.<br><strong></pre></code>
+				
+			<pre><code>	<br>&lt;ns1:descritivo&gt;Atributo competencia vazio. [Identificador: </br>
+			<br>7nxGU5kBOzdgV_oGi4n7]&lt;/ns1:descritivo&gt;</br>
+				<br><strong>Preencher a tag competência.</br></strong></pre></code>
+				
+			<pre><code>	<br>&lt;ns1:descritivo&gt;ERRO. Evento não pode ser lançado em processo com</br>
+			<br>segredo de justiça/sigiloso.&lt;/ns1:descritivo&gt;</br>
+				<br><strong>Erro ocorre ao utilizar as tags para acessar a integra do processo.</br></strong>
+				<br>&lt;int:parametros nome="acessarIntegraProcesso" valor="true"/&gt;</br>
+				<br>&lt;int:parametros nome="tipoIdentProcuradorAcessoIntegra" valor="cpf"/&gt;</br>
+				<br>&lt;int:parametros nome="identProcuradorAcessoIntegra" valor="xxxxxxxxxxx"/&gt;</br></pre></code>
+				
+				
+			<pre><code>	<br>&lt;ns1:descritivo&gt;Erro processando operação listar. [Identificador:</br>
+			<br>vZwDoZkBOzdgV_oGt6fj]&lt;/ns1:descritivo&gt;</br>
+				<br><strong>Se o peticionante estiver enviando mais de um documento, cada documento deve 
+				<br>estar dentro da tag</br></strong> &lt;tip:documentos&gt;. Por exemplo:</br>
+				<br>&lt;tip:documentos&gt;</br>
+				<br>Documento 1</br>
+				<br>&lt;/tip:documentos&gt;</br>
+				<br>&lt;tip:documentos&gt;</br>
+				<br>Documento 2</br>
+				<br>&lt;/tip:documentos&gt;</br></pre></code>
+			
+
+
+
+		</body>
+		</html>
+	
+	
+</p>
+  </main>
+  <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
+</body>
+
+</html>
