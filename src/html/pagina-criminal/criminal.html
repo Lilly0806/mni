@@ -44,21 +44,12 @@
 		    <a href="../pagina-enderecos/mni3.html"> MNI 3.0</a>
         </div>
       </li>
-	 
-
-        
-		    <a href="../pagina-criminal/criminal.html"> Criminal</a>
-       
-  
-     
+	         
+		    <a href="../pagina-criminal/criminal.html"> Criminal</a> 
 		    <a href="src/../../pagina-fiscal/execucaofiscal.html"> Execução Fiscal</a>
-    
-
     </ul>
   </nav>
-
-    
-</p>
+	  
 
 	<p><strong>Descrição:</strong>
 	<br>Tipo de elemento que encapsula os dados de consulta relativos à existência de modificações em um processo judicial. 
@@ -66,7 +57,129 @@
 	se não, o sistema apresenta o erro “Processo não encontrado”.<br><p>
     
 
-<strong>Dados criminais: </strong>
+<p></p><strong>Dados criminais: </strong>
+<br>Os dados criminais serão incorporados de forma estruturada, os campos terão os detalhamentos do delito do polo passivo (parte processada),
+  para cada pessoa no polo passivo deve ter, o nome e o numeroDocumentoPrincipal. O Objeto delito com a dataDelito, localDelito, 
+  ufLocalDelito. E por fim, a lista de enquadramentos listaEnquadramentos com o código do crime ou dispositivo legal em 
+  idNormaDispositivo e se o crime foi tentado crimeTentado, com respostas S para sim e N para não.</br></p>
+
+  <p><strong>Regras para preenchimento do bloco</strong></p>
+   
+  <p>•	O nome do réu deve ser informado em caixa alta.</p>
+	<p>•	O campo localDelito corresponde ao código IBGE da localidade do fato.</p>
+	<p>•	O elemento idNormaDispositivo representa o enquadramento penal e deve ser obtido na tabela de apoio NormaDispositivo, 
+    disponível nos serviços abaixo:</p>
+  
+  <br>Segue o exemplo do objeto dadosCriminais em JSON:</br>  
+
+  <script>
+	function copiarCodigo(id) {
+  const codigo = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(codigo);
+  alert("Código copiado!");
+	}
+	</script>
+
+  <div class="code-box">
+  <pre><code id="codigoXML">
+
+{
+  "poloPassivo": [
+  {
+    "nome": "REU TESTE",
+    "numeroDocumentoPrincipal": "63104056080",
+    "delito": {
+      "dataDelito": "13/11/2023",
+      "localDelito": "3503208",
+      "ufLocalDelito": "SP",
+      "listaEnquadramentos": [
+        { "idNormaDispositivo": "2918", "crimeTentado": "S" },
+        { "idNormaDispositivo": "2805", "crimeTentado": "N" }
+        ]
+      }
+  }
+  
+}
+  </code></pre>
+
+<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+
+<p>Assim como segue o exemplo completo da requisição do envio dos dados criminais, com o parâmetro dadosCriminais devidamente codiicado
+      em base64, conforme abaixo:</p>
+
+     <script>
+	function copiarCodigo(id) {
+  const codigo = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(codigo);
+  alert("Código copiado!");
+	}
+	</script>
+
+  
+    <strong>Requisição</strong>
+
+	<div class="code-box">
+  <pre><code id="codigoXML">
+	
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" xmlns:tip="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2" xmlns:int="http://www.cnj.jus.br/intercomunicacao-2.2.2"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ser:entregarManifestacaoProcessual&gt;
+         &lt;tip:idManifestante&gt;01468760000190&lt;/tip:idManifestante&gt;
+         &lt;tip:senhaManifestante&gt;4266888f17064b95809f85d822eab03cd91fea0e0d5eaa5a158e7622797492d2&lt;/tip:senhaManifestante&gt;
+
+         &lt;tip:dadosBasicos competencia="134" classeProcessual="278" codigoLocalidade="0050" nivelSigilo="0" intervencaoMP="false"&gt;
+
+            &lt;int:polo polo="AT"&gt;
+               &lt;int:parte assistenciaJudiciaria="false"&gt;
+                  &lt;int:pessoa nome="Ministério Público do Estado de São Paulo - MPSP" sexo="M" numeroDocumentoPrincipal="01468760000190" tipoPessoa="juridica" nacionalidade="BR"&gt;
+                     &lt;int:pessoa/&gt;
+                     &lt;int:pessoaVinculada/&gt;
+                  &lt;/int:pessoa&gt;
+               &lt;/int:parte&gt;
+            &lt;/int:polo&gt;
+
+            &lt;int:polo polo="PA"&gt;
+               &lt;int:parte assistenciaJudiciaria="false"&gt;
+                  &lt;int:pessoa nome="REU TESTE" sexo="M" numeroDocumentoPrincipal="63104056080" tipoPessoa="fisica" nacionalidade="BR"&gt;
+                     &lt;int:pessoa/&gt;
+                     &lt;int:pessoaVinculada/&gt;
+                  &lt;/int:pessoa&gt;
+               &lt;/int:parte&gt;
+            &lt;/int:polo&gt;
+
+            &lt;int:assunto principal="true"&gt;
+               &lt;int:codigoNacional&gt;3475&lt;/int:codigoNacional&gt;
+               &lt;int:assuntoLocal codigoAssunto="3475" codigoPaiNacional="3473" descricao="Leve"&gt;
+                  &lt;int:assuntoLocalPai/&gt;
+               &lt;/int:assuntoLocal&gt;
+            &lt;/int:assunto&gt;
+
+            &lt;int:outroParametro nome="dadosCriminais" valor="ewogICJwb2xvUGFzc2l2byI6IFsKICAgIHsKICAgICAgIm5vbWUiOiAiUkVVIFRFU1RFIiwKICAgICAgIm51bWVyb0RvY3VtZW50b1ByaW5jaXBhbCI6ICI2MzEwNDA1NjA4MCIsCiAgICAgICJkZWxpdG8iOiB7CiAgICAgICAgImRhdGFEZWxpdG8iOiAiMTMvMTEvMjAyMyIsCiAgICAgICAgImxvY2FsRGVsaXRvIjogIjM1MDMyMDgiLAogICAgICAgICJ1ZkxvY2FsRGVsaXRvIjogIlNQIiwKICAgICAgICAibGlzdGFFbnF1YWRyYW1lbnRvcyI6IFsKICAgICAgICAgIHsgImlkTm9ybWFEaXNwb3NpdGl2byI6ICIyOTE4IiwgImNyaW1lVGVudGFkbyI6ICJTIiB9LAogICAgICAgICAgeyAiaWROb3JtYURpc3Bvc2l0aXZvIjogIjI4MDUiLCAiY3JpbWVUZW50YWRvIjogIk4iIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0KICBdCn0="/&gt;
+
+         &lt;/tip:dadosBasicos&gt;
+
+         &lt;tip:documento idDocumento="199471" tipoDocumento="164" dataHora="?" mimetype="application/pdf" nivelSigilo="0"&gt;
+            &lt;int:conteudo&gt;BASE64&lt;/int:conteudo&gt;
+            &lt;int:documentoVinculado/&gt;
+         &lt;/tip:documento&gt;
+
+         &lt;tip:parametros nome="tipoIdentProcuradorRepresentacao" valor="CPF"/&gt;
+         &lt;tip:parametros nome="identProcuradorRepresentacao" valor="21332506895"/&gt;
+
+      &lt;/ser:entregarManifestacaoProcessual&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+
+ </code></pre>
+<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+
 
 
 
@@ -75,6 +188,7 @@
 </body>
 
 </html>
+
 
 
 
