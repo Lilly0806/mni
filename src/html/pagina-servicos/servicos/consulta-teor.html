@@ -49,15 +49,15 @@
 	<br>Tipo de elemento destinado a permitir a consulta de teor de comunicação processual pendente relativa ao consultante em um determinado processo judicial. <br><p>
 	
 	<strong>Parâmetros (*campos opcionais*): </strong>
-	<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou 
+	<p><br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou 
 	certificado digital. Visa tornar mais ágil o processo de autenticação, 
-	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.<br><p>
+	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.<br></p>
 	
 	<strong>Autenticação simples*</strong>
 	<br><strong>usuario:</strong> Identificação do usuário 
-		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) <p>
+		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) 
 		
-		<strong>Autenticação Certificada* </strong>
+		<p><strong>Autenticação Certificada* </strong></p>
 		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. 
 		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
 		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
@@ -71,7 +71,7 @@
 		da pessoa solicitadora da autenticação. Alguns exemplos de uso: 
 		CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às credenciais institucionais da procuradoria. <p>
 		
-		<br><strong>Um destes dois parâmetros deve ser preenchido. </br>
+		<br>Um destes dois parâmetros deve ser preenchido. </br>
 		<br><strong>numeroProcesso:</strong>  Número do processo judicial.
 		 
 
@@ -200,6 +200,7 @@
 </body>
 
 </html>
+
 
 
 
