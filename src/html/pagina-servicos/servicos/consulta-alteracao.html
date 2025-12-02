@@ -52,12 +52,12 @@
 
     <p><strong>Descrição:</strong>
 	<br>Retorna informações sobre possíveis alterações em um processo. A consulta só é permitida quando ao menos uma das partes está vinculada a um procurador;
-		caso contrário, o sistema responde com “Processo não encontrado”.<br><p>
+		caso contrário, o sistema responde com “Processo não encontrado”.<br></p>
 	
-	<strong>Parâmetros (*campos opcionais*): </strong>
+	<p><strong>Parâmetros (*campos opcionais*): </strong>
 	<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou 
 	certificado digital. Visa tornar mais ágil o processo de autenticação, 
-	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.<br><p>
+	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.</br></p>
 	
 	<strong>Autenticação simples*</strong>
 	<br><strong>usuario:</strong> Identificação do usuário 
@@ -81,23 +81,14 @@
 			<pre><code>&lt;tip:outroParametro nome="incluirHashDocumentos" valor="false"/&gt;</code></pre>
 
 		<br>Parâmetros adicionais incluirHashCabecalho, incluirHashMovimentacoes e incluirHashDocumentos. Por padrão, os 3 hashes são incluídos. 
-		Para que não seja incluído algum desses hashes, o parâmetro adicional correspondente deve ser definido como false. <p>
-		
+		Para que não seja incluído algum desses hashes, o parâmetro adicional correspondente deve ser definido como false. 
 		
 
-
-		<script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
 
 			<strong>Requisição</strong>
 	
 		<div class="code-box">
-  <pre><code id="codigoXML">
+  <pre><code>
 &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:v300="http://www.cnj.jus.br/mni/v300/" 
   xmlns:tip="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" 
@@ -115,28 +106,19 @@
      &lt;/v300:requisicaoConsultarAlteracao&gt;
    &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
-  </code></pre>
-
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
-  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+ </code></pre>
+<button class="btn-copiar">
+  <img src="../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
 <p>
 
 
-	<script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
-
 		<strong>Resposta</strong>
 		
 <div class="code-box">
-  <pre><code id="codigoSOAP">
+  <pre><code>
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:ns1="http://www.cnj.jus.br/mni/v300/intercomunicacao" 
   xmlns:ns2="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" 
@@ -169,13 +151,15 @@
      &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
   </code></pre>
-  
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
-  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+<button class="btn-copiar">
+  <img src="../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
 
+	
+<div id="toast-copy" class="toast-copy"></div>
+<script src="../../../recursos/js/copiar.js"></script>
 
   </main>
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
