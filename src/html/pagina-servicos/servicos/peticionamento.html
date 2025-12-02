@@ -398,7 +398,8 @@
 		<strong>Modelo de Certidão de Dívida Ativa (CDA) </strong>
 		<br>A lista de CDAs deve ser passada como uma string XML codificada. Por exemplo, a estrutura listada a seguir: </br>
 		
-		<pre><code>
+		<div class="code-box">
+  <pre><code >
 		&lt;ListaCDA&gt; 
 
 		   &lt;CDA&gt; 
@@ -460,13 +461,17 @@
 		   &lt;/CDA&gt; 
 
 		&lt;/L
-		</pre></code>
+		 </code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 		
 		
 		<p><strong>Deve ser codificada e incluída como o conteúdo do elemento outroParametro, desta forma: </strong></p>
 		
 		<div class="code-box">
-  <pre><code id="codigoXML">
+  <pre><code>
 &lt;tip:outroParametro nome="ListaCDA" valor="&lt;ListaCDA&gt;
 		  &lt;CDA&gt;
 			&lt;NumeroCDA&gt;6610783&lt;/NumeroCDA&gt;
@@ -499,11 +504,11 @@
 			&lt;NumeroPaginas&gt;&lt;/NumeroPaginas&gt;
 		  &lt;/CDA&gt;
 		&lt;/ListaCDA&gt;"/&gt;
-  </code></pre>
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+ </code></pre>
+<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
-</button>	</div>
-
+</button>
+	</div>
 
 
 		
@@ -522,13 +527,10 @@
 
 	
 
-		<script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
+			
+<div id="toast-copy" class="toast-copy"></div>
+<script src="../../../../recursos/js/copiar.js"></script>
+
 
   </main>
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
