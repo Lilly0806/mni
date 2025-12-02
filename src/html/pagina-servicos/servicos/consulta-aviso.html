@@ -66,60 +66,64 @@
 
 		<strong>Parâmetros (*Campos Opcionais*)</strong><p>
 		<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou certificado digital. 
-		Visa tornar mais ágil o processo de autenticação, tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj .
+		Visa tornar mais ágil o processo de autenticação, tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.</p>
 
 		<p><strong>Autenticação simples* </strong>
 		<br><strong>usuario:</strong> Identificação do usuário 
-		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) <p>
- 
-		<br><strong>Autenticação Certificada*</strong> 
-		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. 
-		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
-		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
+		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) </p>
+
+<p>
+		<br><strong>Autenticação Certificada*</strong> </br>
+		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. </br>
+		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. </br>
+		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. </br>
 		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.  
 		codificacaoCadeiaCertificado: Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, 
-	quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação, de forma que as implementações cliente não devem contar com esse tipo de tratamento. 
-<p>
+	quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar 
+	  envio equivocado da informação, de forma que as implementações cliente não devem contar com esse tipo de tratamento. </br></p>	     
+	 	
+
 		
-		<strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às 
+		<p><br><strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às 
 		credenciais da pessoa solicitadora da autenticação. Alguns exemplos de uso: CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às c
-		redenciais institucionais da procuradoria. <p>
+		redenciais institucionais da procuradoria.</br></p>
  
-		<br><strong>idRepresentado*:</strong> (erro – não funciona) O identificador da pessoa representada pelo consultante a respeito da qual se realiza a 
+		<p><br><strong>idRepresentado*:</strong> (erro – não funciona) O identificador da pessoa representada pelo consultante a respeito da qual se realiza a 
 		consulta. O ideal é que o identificador seja o número de inscrição da pessoa representada no cadastro do Ministério da Fazenda (CPF ou CNPJ) ou o número RIC. 
 		O parâmetro é opcional. Caso não seja fornecido este parâmetro, a implementação deverá assegurar que todos os avisos existentes em processos nos quais o consultante 
-		atua como órgão de representação processual sejam retornados. (Lists - Bug #447). <p>
+		atua como órgão de representação processual sejam retornados. (Lists - Bug #447).</br> </p>
 
-		<br><strong>DataInicial *:</strong> Data inicial a partir da qual devem ser listados os avisos pendentes. Formato: AAAA-MM-DDThh:mm:ss. <p>
-		<br><strong>dataFinal *:</strong> Data final a partir da qual devem ser listados os avisos pendentes. Formato: AAAA-MM-DDThh:mm:ss.<p> 
-		<br><strong>tipoPendencia *:</strong> PC, PR ou AM 
-		<br>PC = pendente de ciência, PR = pendente de resposta e AM = ambos. <p>
-		<br><strong>tipoAviso:</strong> tipo de aviso pendente, informar um tipo por vez <p>
-		<br>CIT = citação, INT = intimação, IDP = intimação de despacho, IDC = intimação de decisão, IAD = intimação de audiência, IST = intimação de sentença, 
-		IAC = intimação de acórdão,  
-		<br>NOT = notificação (Notifica a distribuição de processo), VIS = vista para manifestação, URG = urgente, PTA = pauta de julgamento/audiência. <p>
+		<p><strong>DataInicial *:</strong> Data inicial a partir da qual devem ser listados os avisos pendentes. Formato: AAAA-MM-DDThh:mm:ss.</p><br>
+		<p>><br><strong>dataFinal *:</strong> Data final a partir da qual devem ser listados os avisos pendentes. Formato: AAAA-MM-DDThh:mm:ss.</br></p>
+		<br><strong>tipoPendencia *:</strong> PC, PR ou AM </br>
+		<br>PC = pendente de ciência, PR = pendente de resposta e AM = ambos. </br><p>
+		<br><strong>tipoAviso:</strong> tipo de aviso pendente, informar um tipo por vez.</br>
+		<p><br>CIT = citação, INT = intimação, IDP = intimação de despacho, IDC = intimação de decisão, IAD = intimação de audiência, IST = intimação de sentença, 
+		IAC = intimação de acórdão,</br>  </p>
+		<p><br>NOT = notificação (Notifica a distribuição de processo), VIS = vista para manifestação, URG = urgente, PTA = pauta de julgamento/audiência.</br> </p>
  
 		<br>Todos os tipos de eventos estão associados com intimações no sistema, exceto o NOT e PTA. O NOT é disparado toda vez que é protocolado 
-		um processo em que a entidade é parte e o PTA é disparado após o evento "Expedida/certificada a comunicação eletrônica" gerada automaticamente com o fechamento da pauta. 
-</p>
+		um processo em que a entidade é parte e o PTA é disparado após o evento "Expedida/certificada a comunicação eletrônica" gerada automaticamente com 
+	    o fechamento da pauta. </br>
 		
 		<strong>Lists Bug #628</strong> 
-		<br>AM (Não encontrei erros) 
-		<br>PC (Não encontrei erros) 
-		<br>PR (Prazos já abertos continuam aparecendo na resposta como ag. abertura) 
-		<p>
+		<br>AM (Não encontrei erros) </br>
+		<br>PC (Não encontrei erros) </br>
+		<br>PR (Prazos já abertos continuam aparecendo na resposta como ag. abertura) </br>
 		
-		<br><strong>Outros parâmetros</strong>
+		
+		<p><br><strong>Outros parâmetros</strong></p>
 					<pre><code>&lt;tip:outroParametro nome="todosPrazos" valor="true"/&gt;</code></pre>
 
-		<br>Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e false: retorna situação Aguardando Abertura. <p>
+		<br>Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e false: retorna situação Aguardando Abertura.</br> 
 		
-							<pre><code>&lt;tip:outroParametro nome="informacoesDetalhadas" valor="true"/&gt;</code></pre>
+							<p><code>&lt;tip:outroParametro nome="informacoesDetalhadas" valor="true"/&gt;</code></pre></p><pre>
 
-			<br>Retorna detalhes, true retorna as informações identificadorMovimento, descricaoMovimento, dataHoraMovimento, codigoMovimento, codigoCNJ, prazo e status. </br><p>
+			<br>Retorna detalhes, true retorna as informações identificadorMovimento, descricaoMovimento, dataHoraMovimento, codigoMovimento, codigoCNJ, 
+								prazo e status. </br><p>
 			
 
-        
+        <div class="code-box">
 			<pre><code>
 &lt;ns1:outroParametro nome="identificadorMovimento" valor="2"/&gt;
 &lt;ns1:outroParametro nome="descricaoMovimento" valor="Expedida/certificada a intimação eletrônica - Vista ao MP para Parecer"/&gt;
@@ -129,6 +133,10 @@
 &lt;ns1:outroParametro nome="prazo" valor="10"/&gt;
 &lt;ns1:outroParametro nome="status" valor="Aguardando Abertura"/&gt;
   </code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
   <p>
   
 		<strong>&lt;tip:outroParametro nome="inibirPartes" valor="false"/&lt; (erro – não funciona) </strong>
@@ -152,25 +160,16 @@
 			<strong>&lt;tip:outroParametro nome="limitarProcessos" valor="10">/&lt;</strong>
 			<br><strong>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&lt;</strong>
 
-			<p><strong><p>
+			<p><strong>
   &lt;ns1:dataDisponibilizacao&gt;Data&lt;/ns1:dataDisponibilizacao&gt;</strong>
-				<br>Essa tag de retorno se refere a data e hora em que o solicitante realizou a consulta no serviço consultarAvisosPendentes. <p>
-				
-		
+				<br>Essa tag de retorno se refere a data e hora em que o solicitante realizou a consulta no serviço consultarAvisosPendentes.</p></br>
+								
+			
 
-
-<script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
-
-			<strong>Requisição</strong>
+			<p><strong>Requisição</strong></p>
 	
 		<div class="code-box">
-  <pre><code id="codigoXML">
+  <pre><code>
 &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v300="http://www.cnj.jus.br/mni/v300/" xmlns:tip="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:int="http://www.cnj.jus.br/mni/v300/intercomunicacao"&gt;
   &lt;soapenv:Header/&gt;
   &lt;soapenv:Body&gt;
@@ -200,28 +199,19 @@
     &lt;/v300:requisicaoConsultarAvisosPendentes&gt;
   &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
-
  </code></pre>
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
 <p>
 
-  <script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
-
   
 		<strong>Resposta</strong>
 		
 <div class="code-box">
-  <pre><code id="codigoSOAP">
+  <pre><code>
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.cnj.jus.br/mni/v300/intercomunicacao" xmlns:ns2="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:ns3="http://www.cnj.jus.br/mni/v300/" xmlns:xmime="http://www.w3.org/2005/05/xmlmime"&gt;
   &lt;SOAP-ENV:Body&gt;
     &lt;ns3:respostaConsultarAvisosPendentes&gt;
@@ -281,9 +271,8 @@
     &lt;/ns3:respostaConsultarAvisosPendentes&gt;
   &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
-
-	 </code></pre>
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+ </code></pre>
+<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
@@ -291,6 +280,8 @@
 
 
 		
+<div id="toast-copy" class="toast-copy"></div>
+<script src="../../../../recursos/js/copiar.js"></script>
 
   </main>
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
