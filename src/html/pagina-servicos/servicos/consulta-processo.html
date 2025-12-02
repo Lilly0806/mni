@@ -46,7 +46,7 @@
     </ul>
   </nav>
 
-    <p><strong>Descrição:</strong></p>
+   <strong>Descrição:</strong>
 	<br>Elemento destinado a encapsular os parâmetros necessários a uma consulta processual. É possível acessar os processos com sigilo 0 e 1. 
 	Processos com sigilo apresentam o erro “ERRO. Evento não pode ser lançado em processo com segredo de justiça/sigiloso”.</br>
 	
@@ -55,15 +55,15 @@
 	certificado digital. Visa tornar mais ágil o processo de autenticação, 
 	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.</br>
 	
-	<strong>Autenticação simples*</strong>
+	<br><strong>Autenticação simples*</strong></br>
 	<br><strong>usuario:</strong> Identificação do usuário</br>
 		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha)</br>
 		
 		<p><strong>Autenticação Certificada* </strong>
-		<br><strong>Assinatura:</strong> Hash da assinatura, em base64.</br>
-		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. </br>
-		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. </br>
-		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.</br>
+		<br><strong>Assinatura:</strong> Hash da assinatura, em base64.
+		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
+		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
+		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.
 		<br><strong>codificacaoCadeiaCertificado:</strong> Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, quando não 
 	  	indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação,
 		de forma que as implementações cliente não devem contar com esse tipo de tratamento.</br> </p>
