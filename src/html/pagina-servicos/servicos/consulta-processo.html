@@ -46,44 +46,45 @@
     </ul>
   </nav>
 
-    <p><strong>Descrição:</strong>
+    <p><strong>Descrição:</strong></p>
 	<br>Elemento destinado a encapsular os parâmetros necessários a uma consulta processual. É possível acessar os processos com sigilo 0 e 1. 
-	Processos com sigilo apresentam o erro “ERRO. Evento não pode ser lançado em processo com segredo de justiça/sigiloso”.<br><p>
+	Processos com sigilo apresentam o erro “ERRO. Evento não pode ser lançado em processo com segredo de justiça/sigiloso”.</br>
 	
-	<strong>Parâmetros (*campos opcionais*): </strong>
+	<p><strong>Parâmetros (*campos opcionais*): </strong></p>
 	<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou 
 	certificado digital. Visa tornar mais ágil o processo de autenticação, 
-	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.<br><p>
+	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.</br>
 	
-	<strong>Autenticação simples*</strong>
+	<p><strong>Autenticação simples*</strong></p>
 	<br><strong>usuario:</strong> Identificação do usuário 
-		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) <p>
+		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) 
 		
-		<strong>Autenticação Certificada* </strong>
-		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. 
-		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
-		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
-		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.
-		<br><strong>codificacaoCadeiaCertificado:</strong> Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação,
-		de forma que as implementações cliente não devem contar com esse tipo de tratamento. <p>
+		<p><strong>Autenticação Certificada* </strong>
+		<br><strong>Assinatura:</strong> Hash da assinatura, em base64.</br>
+		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. </br>
+		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. </br>
+		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.</br>
+		<br><strong>codificacaoCadeiaCertificado:</strong> Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, quando não 
+	  	indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação,
+		de forma que as implementações cliente não devem contar com esse tipo de tratamento.</br> </p>
 		
-		<strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às credenciais da pessoa solicitadora da autenticação. Alguns exemplos de uso: 
-		CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às credenciais institucionais da procuradoria.<p>
+		<p><strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às credenciais da pessoa solicitadora da autenticação. Alguns exemplos de uso: 
+		CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às credenciais institucionais da procuradoria.</p>
 		
 		
-		<br><strong>numeroProcesso:</strong>  Número do processo judicial. <p>
+		<br><strong>numeroProcesso:</strong>  Número do processo judicial.</br> 
 		
-		<br><strong>dataInicial*:</strong> Data inicial a partir da qual serão retornados os movimentos ou os documentos, caso tenham sido solicitados. <p>
-		<br><strong>dataFinal*:</strong> Data final a partir da qual serão retornados os movimentos ou os documentos, caso tenham sido solicitados. <p>
-		<br><strong>incluirCabecalho*:</strong> Indicação relativa à intenção de ver retornados os dados básicos do processo. <p>
-		<br><strong>incluirPartes*:</strong> Indicação relativa à intenção de ver retornados os dados das partes com a supressão dos seus endereços. 
-		A configuração desse elemento será desconsiderada caso o elemento "incluirCabecalho" esteja configurado como 'false'.  <p>
-		<br><strong>incluirEnderecos*:</strong>  Indicação relativa à intenção de ver retornados os endereços das partes. A configuração desse elemento será desconsiderada 
-		caso o elemento "incluirPartes" esteja configurado como 'false'. <p>
-		<br><strong>incluirMovimentos*:</strong> Indicação relativa à intenção de ver retornados também os movimentos atrelados ao processo consultado. 
-		As movimentações serão retornadas a partir da dataReferencia. Caso não seja fornecida dataReferencia, serão retornadas todas as movimentações. <p>
-		<br><strong>incluirDocumentos*:</strong> Indicação relativa à intenção de ver retornados também os documentos atrelados ao processo consultado. 
-		Os documentos serão retornados a partir da dataReferencia. Caso não seja fornecida dataReferencia, serão retornados todos os documentos. </p>
+		<p><br><strong>dataInicial*:</strong> Data inicial a partir da qual serão retornados os movimentos ou os documentos, caso tenham sido solicitados.</br></p> 
+		<p><br><strong>dataFinal*:</strong> Data final a partir da qual serão retornados os movimentos ou os documentos, caso tenham sido solicitados. </br></p>
+		<p><br><strong>incluirCabecalho*:</strong> Indicação relativa à intenção de ver retornados os dados básicos do processo.</br></p>
+		<p><br><strong>incluirPartes*:</strong> Indicação relativa à intenção de ver retornados os dados das partes com a supressão dos seus endereços.
+		A configuração desse elemento será desconsiderada caso o elemento "incluirCabecalho" esteja configurado como 'false'. </br></p>
+		<p><br><strong>incluirEnderecos*:</strong>  Indicação relativa à intenção de ver retornados os endereços das partes. A configuração desse elemento será desconsiderada 
+		caso o elemento "incluirPartes" esteja configurado como 'false'.</br></p>
+		<p><br><strong>incluirMovimentos*:</strong> Indicação relativa à intenção de ver retornados também os movimentos atrelados ao processo consultado. 
+		As movimentações serão retornadas a partir da dataReferencia. Caso não seja fornecida dataReferencia, serão retornadas todas as movimentações.</br></p> 
+		<p><br><strong>incluirDocumentos*:</strong> Indicação relativa à intenção de ver retornados também os documentos atrelados ao processo consultado. 
+		Os documentos serão retornados a partir da dataReferencia. Caso não seja fornecida dataReferencia, serão retornados todos os documentos.</br> </p>
 		
 		<br>Os parâmetros incluirPartes só funciona se o parâmetro incluirCabecalho estiver como true.</br><p>
 		
