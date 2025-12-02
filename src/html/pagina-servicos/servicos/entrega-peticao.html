@@ -179,24 +179,12 @@
 			
 			<br>O parâmetro identEncerraPrazos pode ser utilizado para indicar a intenção de fechamento de todos os prazos relacionados a uma determinada parte. 
 			O conteúdo do campo deve ser o CPF ou CNPJ da parte cujos prazos relacionados deseja-se fechar no peticionamento. </br>
-			<br>Funciona em conjunto com abrirPrazoAutomaticamente. </br><p>
+			<br>Funciona em conjunto com abrirPrazoAutomaticamente. </br>
 
-		
-
-
-
-		<script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
-
-			<strong>Requisição</strong>
+			<p><strong>Requisição</strong></p>
 	
 		<div class="code-box">
-  <pre><code id="codigoXML">
+  <pre><code>
 &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v300="http://www.cnj.jus.br/mni/v300/" xmlns:tip="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:int="http://www.cnj.jus.br/mni/v300/intercomunicacao"&gt;
    &lt;soapenv:Header/&gt;
    &lt;soapenv:Body&gt;
@@ -239,15 +227,16 @@
    &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
   </code></pre>
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
-</button>	</div>
+</button>
+	</div>
 
-<p>
-		<strong>Resposta</strong>
+
+		<p><strong>Resposta</strong></p>
 		
 <div class="code-box">
-  <pre><code id="codigoSOAP">
+  <pre><code>
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
                    xmlns:ns1="http://www.cnj.jus.br/mni/v300/intercomunicacao" 
                    xmlns:ns2="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" 
@@ -280,14 +269,20 @@
       &lt;/ns3:respostaEntregarPeticao&gt;
    &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
-  </code></pre>
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+   </code></pre>
+<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
-</button></div>
+</button>
+	</div>
 
+	
+<div id="toast-copy" class="toast-copy"></div>
+<script src="../../../../recursos/js/copiar.js"></script>
+
+	  
   </main>
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
 </body>
-
 </html>
+
 
