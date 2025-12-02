@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultar Processo - TJSP</title>
+  <link rel="stylesheet" href="../../../../recursos/css/style.css">
+</head>
+<body>
+  <header>
+<a href="../../../../index.html">
+<img src="../../../../recursos/img/brasao.png" alt="Brasão do TJSP"></a>
+    Tribunal de Justiça do Estado de São Paulo
+
+    <a href="../../../../index.html" 
+   class="btn-voltar" 
+   title="Voltar para a Página Inicial"> <img src="../../../../recursos/img/btn-voltar.png" alt="Voltar para a página inicial">
+</a>
+
+
+  </header>
+  <main>
+    <h1>SERVIÇOS DISPONÍVEIS DO MNI 3.0.
+			consultarProcesso<p>
+</h1>
+
+<!-- Menu suspenso -->
+   <nav>
+    <ul>
+      <li><a href="../../../../index.html">Início</a></li>
+
+      <li class="dropdown">
+        <a href="#">Serviços ▼</a>
+        <div class="dropdown-content">
+          <a href="src/../../servicomni.html">MNI 3.0</a>
+           <a href="src/../../servicomni2.html">MNI 2.2</a>
+
+        </div>
+      </li>
+      
+     <li class="dropdown">
+        <a href="#">Endereço de Acesso MNI ▼</a>
+        <div class="dropdown-content">
+		    <a href="src/../../../pagina-enderecos/mni3.html"> MNI 3.0</a>
+        </div>
+      </li>
+	  
+		    <a href="src/../../../pagina-criminal/criminal.html"> Criminal</a>
+       
+     
+		    <a href="src/../../../pagina-fiscal/execucaofiscal.html"> Execução Fiscal</a>
+    
+
+    </ul>
+  </nav>
+
+
+    <p><strong>Descrição:</strong>
+	<br>Elemento destinado a encapsular os parâmetros necessários a uma consulta processual. É possível acessar os processos com sigilo 0 e 1. 
+	Processos com sigilo apresentam o erro “ERRO. Evento não pode ser lançado em processo com segredo de justiça/sigiloso”.<br><p>
+	
+	<strong>Parâmetros (*campos opcionais*): </strong>
+	<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou 
+	certificado digital. Visa tornar mais ágil o processo de autenticação, 
+	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.<br><p>
+	
+	<strong>Autenticação simples*</strong>
+	<br><strong>usuario:</strong> Identificação do usuário 
+		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) <p>
+		
+		<strong>Autenticação Certificada* </strong>
+		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. 
+		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
+		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
+		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.
+		<br><strong>codificacaoCadeiaCertificado:</strong> Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação,
+		de forma que as implementações cliente não devem contar com esse tipo de tratamento. <p>
+		
+		<strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às credenciais da pessoa solicitadora da autenticação. Alguns exemplos de uso: 
+		CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às credenciais institucionais da procuradoria.<p>
+		
+		
+		<br><strong>numeroProcesso:</strong>  Número do processo judicial. <p>
+		
+		<br><strong>dataInicial*:</strong> Data inicial a partir da qual serão retornados os movimentos ou os documentos, caso tenham sido solicitados. <p>
+		<br><strong>dataFinal*:</strong> Data final a partir da qual serão retornados os movimentos ou os documentos, caso tenham sido solicitados. <p>
+		<br><strong>incluirCabecalho*:</strong> Indicação relativa à intenção de ver retornados os dados básicos do processo. <p>
+		<br><strong>incluirPartes*:</strong> Indicação relativa à intenção de ver retornados os dados das partes com a supressão dos seus endereços. 
+		A configuração desse elemento será desconsiderada caso o elemento "incluirCabecalho" esteja configurado como 'false'.  <p>
+		<br><strong>incluirEnderecos*:</strong>  Indicação relativa à intenção de ver retornados os endereços das partes. A configuração desse elemento será desconsiderada 
+		caso o elemento "incluirPartes" esteja configurado como 'false'. <p>
+		<br><strong>incluirMovimentos*:</strong> Indicação relativa à intenção de ver retornados também os movimentos atrelados ao processo consultado. 
+		As movimentações serão retornadas a partir da dataReferencia. Caso não seja fornecida dataReferencia, serão retornadas todas as movimentações. <p>
+		<br><strong>incluirDocumentos*:</strong> Indicação relativa à intenção de ver retornados também os documentos atrelados ao processo consultado. 
+		Os documentos serão retornados a partir da dataReferencia. Caso não seja fornecida dataReferencia, serão retornados todos os documentos. </p>
+		
+		<br>Os parâmetros incluirPartes só funciona se o parâmetro incluirCabecalho estiver como true.</br><p>
+		
+		<strong>Outros parâmetros</strong><p> 
+			<pre><code>&lt;tip:parametros nome="acessarIntegraProcesso" valor="true"/&gt;</code></pre>
+			<pre><code>&lt;tip:parametros nome="tipoIdentProcuradorAcessoIntegra" valor="cpf"/&gt;</code></pre>
+			<pre><code>&lt;tip:parametros nome="identProcuradorAcessoIntegra" valor="CPF-PROCURADOR"/&gt;</code></pre>
+
+		<br>Parâmetro para acessar a integra dos autos sem segredo de justiça.</p>
+		
+		<pre><code>&lt;tip:parametros nome="chave" valor="xxxxxxxxxxx"/&gt;</code></pre>
+		<br>Processos de sigilo nível 1 podem ser consultados na integra contanto que seja fornecida a chave de consulta usando o parâmetro adicional chave.
+		É possível verificar o valor da chave ao utilizar o serviço consultarProcesso, desde que o consultante seja parte do processo.</p>
+
+
+
+			<strong>Requisição</strong>
+	
+		<div class="code-box">
+  <pre><code >
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v300="http://www.cnj.jus.br/mni/v300/" xmlns:tip="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:int="http://www.cnj.jus.br/mni/v300/intercomunicacao"&gt;
+  &lt;soapenv:Header/&gt;
+  &lt;soapenv:Body&gt;
+    &lt;v300:requisicaoConsultarProcesso&gt;
+      &lt;tip:consultante&gt;
+        &lt;!--You have a CHOICE of the next 3 items at this level--&gt;
+        &lt;!--&lt;int:token&gt;?&lt;/int:token&gt;--&gt;
+        &lt;int:autenticacaoSimples&gt;
+          &lt;int:usuario&gt;USUARIO&lt;/int:usuario&gt;
+          &lt;int:senha&gt;SENHA&lt;/int:senha&gt;
+        &lt;/int:autenticacaoSimples&gt;
+        &lt;!-- 
+        &lt;int:autenticacaoCertificada&gt;
+          &lt;int:assinatura&gt;cid:687471006552&lt;/int:assinatura&gt;
+          &lt;int:dataAssinatura&gt;?&lt;/int:dataAssinatura&gt;
+          &lt;int:cadeiaCertificado&gt;?&lt;/int:cadeiaCertificado&gt;
+          &lt;int:algoritmo&gt;sha256WithRSAEncryption&lt;/int:algoritmo&gt;
+          &lt;int:codificacaoCadeiaCertificado&gt;PEM&lt;/int:codificacaoCadeiaCertificado&gt;
+        &lt;/int:autenticacaoCertificada&gt;
+        --&gt;
+        &lt;!--Optional:--&gt;
+        &lt;int:pessoaVinculada&gt;?&lt;/int:pessoaVinculada&gt;
+      &lt;/tip:consultante&gt;
+      &lt;tip:numeroProcesso&gt;40000529420258260019&lt;/tip:numeroProcesso&gt;
+      &lt;!--Optional:--&gt;
+      &lt;tip:dataInicial&gt;?&lt;/tip:dataInicial&gt;
+      &lt;!--Optional:--&gt;
+      &lt;tip:dataFinal&gt;?&lt;/tip:dataFinal&gt;
+      &lt;!--Optional:--&gt;
+      &lt;tip:incluirCabecalho&gt;true&lt;/tip:incluirCabecalho&gt;
+      &lt;!--Optional:--&gt;
+      &lt;tip:incluirPartes&gt;false&lt;/tip:incluirPartes&gt;
+      &lt;!--Optional:--&gt;
+      &lt;tip:incluirEnderecos&gt;false&lt;/tip:incluirEnderecos&gt;
+      &lt;!--Optional:--&gt;
+      &lt;tip:incluirMovimentos&gt;false&lt;/tip:incluirMovimentos&gt;
+      &lt;!--Optional:--&gt;
+      &lt;tip:incluirDocumentos&gt;false&lt;/tip:incluirDocumentos&gt;
+      &lt;!--Zero or more repetitions:--&gt;
+      &lt;tip:parametros nome="?" valor="?"/&gt;
+    &lt;/v300:requisicaoConsultarProcesso&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+ </code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+</p>
+
+<p>
+		<strong>Resposta</strong>
+		
+<div class="code-box">
+  <pre><code >
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.cnj.jus.br/mni/v300/intercomunicacao" xmlns:ns2="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:ns3="http://www.cnj.jus.br/mni/v300/" xmlns:xmime="http://www.w3.org/2005/05/xmlmime"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns3:respostaConsultarProcesso&gt;
+      &lt;ns2:recibo&gt;
+        &lt;ns1:sucesso&gt;true&lt;/ns1:sucesso&gt;
+        &lt;ns1:mensagens&gt;
+          &lt;ns1:descritivo&gt;Processo consultado com sucesso&lt;/ns1:descritivo&gt;
+          &lt;ns1:codigo&gt;0&lt;/ns1:codigo&gt;
+          &lt;ns1:codigoUnico/&gt;
+          &lt;ns1:tipo&gt;INFORMACAO&lt;/ns1:tipo&gt;
+        &lt;/ns1:mensagens&gt;
+      &lt;/ns2:recibo&gt;
+      &lt;ns2:processo&gt;
+        &lt;ns1:dadosBasicos&gt;
+          &lt;ns1:dadosBasicos&gt;
+            &lt;ns1:numero&gt;40000529420258260019&lt;/ns1:numero&gt;
+            &lt;ns1:classeProcessual&gt;241&lt;/ns1:classeProcessual&gt;
+            &lt;ns1:orgaoJulgador&gt;
+              &lt;ns1:codigo&gt;019000401&lt;/ns1:codigo&gt;
+              &lt;ns1:nome&gt;Juízo Titular I - 4ª Vara Cível da Comarca de Americana&lt;/ns1:nome&gt;
+              &lt;ns1:instancia&gt;ORIG&lt;/ns1:instancia&gt;
+              &lt;ns1:codigoLocalidade&gt;3501608&lt;/ns1:codigoLocalidade&gt;
+            &lt;/ns1:orgaoJulgador&gt;
+          &lt;/ns1:dadosBasicos&gt;
+          &lt;ns1:competencia&gt;114&lt;/ns1:competencia&gt;
+          &lt;ns1:classeProcessual&gt;241&lt;/ns1:classeProcessual&gt;
+          &lt;ns1:codigoLocalidade&gt;0019&lt;/ns1:codigoLocalidade&gt;
+          &lt;ns1:nivelSigilo&gt;0&lt;/ns1:nivelSigilo&gt;
+          &lt;ns1:intervencaoMP&gt;false&lt;/ns1:intervencaoMP&gt;
+          &lt;ns1:tamanhoProcesso&gt;966124&lt;/ns1:tamanhoProcesso&gt;
+          &lt;ns1:dataAjuizamento&gt;2025-07-05T12:41:51-03:00&lt;/ns1:dataAjuizamento&gt;
+          &lt;ns1:assunto principal="true"&gt;
+            &lt;ns1:codigoNacional&gt;14918&lt;/ns1:codigoNacional&gt;
+          &lt;/ns1:assunto&gt;
+          &lt;ns1:magistradoAtuante&gt;12345678900&lt;/ns1:magistradoAtuante&gt;
+          &lt;ns1:prioridade/&gt;
+          &lt;ns1:outroParametro nome="rito" valor="2"/&gt;
+          &lt;ns1:outroParametro nome="ritoProcessual" valor="Ordinário"/&gt;
+          &lt;ns1:outroParametro nome="assuntoPrincipal"/&gt;
+          &lt;ns1:outroParametro nome="dataAutuacao" valor="20250705124151"/&gt;
+          &lt;ns1:outroParametro nome="orgaoJulgador" valor="Juízo Titular I - 4ª Vara Cível da Comarca de Americana"/&gt;
+          &lt;ns1:outroParametro nome="situacao" valor="MOVIMENTO"/&gt;
+          &lt;ns1:outroParametro nome="antecipacaoTutela" valor="Não Requerida"/&gt;
+          &lt;ns1:valorCausa&gt;10000&lt;/ns1:valorCausa&gt;
+          &lt;ns1:orgaoJulgador&gt;
+            &lt;ns1:codigo&gt;019000401&lt;/ns1:codigo&gt;
+            &lt;ns1:nome&gt;Juízo Titular I - 4ª Vara Cível da Comarca de Americana&lt;/ns1:nome&gt;
+            &lt;ns1:instancia&gt;ORIG&lt;/ns1:instancia&gt;
+            &lt;ns1:codigoLocalidade&gt;3501608&lt;/ns1:codigoLocalidade&gt;
+          &lt;/ns1:orgaoJulgador&gt;
+          &lt;ns1:processoFisico&gt;false&lt;/ns1:processoFisico&gt;
+          &lt;ns1:pedidoLiminarPendente&gt;false&lt;/ns1:pedidoLiminarPendente&gt;
+        &lt;/ns1:dadosBasicos&gt;
+      &lt;/ns2:processo&gt;
+    &lt;/ns3:respostaConsultarProcesso&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+ </code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+</p>
+
+	<div id="toast-copy" class="toast-copy"></div>
+<script src="/recursos/js/copiar.js"></script>
+
+  </main>
+  <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
+</body>
+</html>
