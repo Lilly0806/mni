@@ -87,19 +87,10 @@
 
 		
 
-
-		<script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
-
 			<strong>Requisição</strong>
 	
 		<div class="code-box">
-  <pre><code id="codigoXML">
+  <pre><code>
 &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v300="http://www.cnj.jus.br/mni/v300/" xmlns:tip="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:int="http://www.cnj.jus.br/mni/v300/intercomunicacao"&gt;
   &lt;soapenv:Header/&gt;
   &lt;soapenv:Body&gt;
@@ -129,17 +120,17 @@
     &lt;/v300:requisicaoConsultarDocumentosProcesso&gt;
   &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
-  </code></pre>
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+ </code></pre>
+<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
-<p>
-		<strong>Resposta</strong>
+
+		<p><strong>Resposta</strong></p>
 		
 <div class="code-box">
-  <pre><code id="codigoSOAP">
+  <pre><code>
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.cnj.jus.br/mni/v300/intercomunicacao" xmlns:ns2="http://www.cnj.jus.br/mni/v300/tipos-servico-intercomunicacao" xmlns:ns3="http://www.cnj.jus.br/mni/v300/" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include"&gt;
   &lt;SOAP-ENV:Body&gt;
     &lt;ns3:respostaConsultarDocumentosProcesso&gt;
@@ -167,19 +158,16 @@
     &lt;/ns3:respostaConsultarDocumentosProcesso&gt;
   &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
-  </code></pre>
-<button class="btn-copiar" onclick="copiarCodigo('codigoXML')">
+</code></pre>
+<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
+	  <div id="toast-copy" class="toast-copy"></div>
+<script src="../../../../recursos/js/copiar.js"></script>
+
   </main>
- 
-<script src="../../../recursos/js/menu.js"></script>
-
-
-
-
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
 </body>
 </html>
