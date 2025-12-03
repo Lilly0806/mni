@@ -99,9 +99,14 @@
 		e, quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio 
 		equivocado da informação, de forma que as implementações cliente não devem contar com esse tipo de tratamento. </p>
 		<p><strong>documentoVinculado*: </strong>Documento vinculado a este documento. </p>
-		<pre>
-			&lt;int:documentoVinculado documentoVinculado="82400092"/&gt;
-			</pre>
+
+	  <div class="code-box">
+			 <pre>&lt;int:documentoVinculado documentoVinculado="82400092"/&gt;</pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+			
 		<br>Utilizar neste formato. Requisição não deu erro, mas como recuperar essa informação? 
 		<br>Foi possível colocar qualquer número que a petição passou sem problema.</br>
 
@@ -112,31 +117,57 @@
 		<p><strong>tribunal*: </strong>Identifica o tribunal do respectivo segmento de Justiça. </p>
 		<p><strong>unidade*: </strong>Identifica a unidade de origem do processo judicial, observadas as estruturas administrativas de cada segmento de Justiça. </p>
 		<p><strong>tamanhoConteudo*: </strong>Quantidade aproximada, em bytes, do conteúdo do documento. </p>
-		
+
+	  <div class="code-box">
 		<pre>&lt;int:outroParametro nome="NomeDocumentoUsuario" valor="teste.pdf"/&gt; </pre>
+	  <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 		
 		<br>No peticionamento pelo serviço do MNI é possível informar o nome original do arquivo através do parâmetro NomeDocumentoUsuario.
 		Caso não informado este parâmetro, o Eproc assumirá o nome id_externo_X.XXX como sendo o nome do arquivo. </br>
-		
-		<p><pre>&lt;int:outroParametro nome="ObsDocumento" valor="ObsDocumentoTeste"/&gt; </pre></p>
+
+	  <div class="code-box">
+		<pre>&lt;int:outroParametro nome="ObsDocumento" valor="ObsDocumentoTeste"/&gt; </pre>
+	   <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	  
 		<br>É possível também informar uma observação associada ao documento através do parâmetro ObsDocumento. Esse parâmetro é igualmente opcional. </br>
-		
+
+	  <div class="code-box">
 		<pre>&lt;int:parametros nome="identProcuradorRepresentacao" valor="27717733846"/&gt; </pre>
+		     <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+
+		  <div class="code-box">
 			<pre>&lt;int:parametros nome="tipoIdentProcuradorRepresentacao" valor="CPF"/&gt;</pre>
-		
+		   <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			
 			<br>indica o peticionante quando a autenticação é feita com usuário de sistema. Não é obrigatório, mas é interessante que seja sempre preenchido. 
 			<br>Se preenchido com um procurador inexistente o sistema não apresenta erro, mas aparece o usuário vinculado à entidade como peticionante. </br>
 
 		
 		<p><strong>dataEnvio*: </strong>A data do envio na origem.  Pode ser informada no formato AAAAMMDDHHMMSS. </p>
-		
+	  
+		<div class="code-box">
 		<pre>
 			&lt;tip:outroParametro nome="identProcuradorSubstabelecido" valor="xxxxxxxxxxx"/&gt;  
 			&lt;tip:outroParametro nome="tipoIdentProcuradorSubstabelecido" valor="CPF"/&gt;  
 			&lt;tip:outroParametro nome="identParteSubstabelecimento" valor="27717733846"/&gt;  
 			&lt;tip:outroParametro nome="tipoSubstabelecimento" valor="C"/&gt;
 			</pre>
+	     <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			
 			<br>O procurador substabelecido deve ser indicado pelos parâmetros identProcuradorSubstabelecido (por exemplo, o número do CPF)
 			e tipoIdentProcuradorSubstabelecido (seguindo com o exemplo, CPF). </br>
@@ -148,17 +179,27 @@
 		
 		
 		<p><strong>Outros Parâmetros </strong></p>
-			
+
+	  <div class="code-box">
 			<pre>
 			<strong>Colocar abaixo da tag </strong>&lt;/tip:documentos&gt; 
 			&lt;int:parametros nome="prioridade" valor="X"/&gt;
 			</pre>
+		   <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			
 			<br>Ao realizar uma petição intermediária, é possível definir uma prioridade de acordo com o parâmetro “prioridade”. Os valores possíveis são: 
 			1 - Liminar/Antecipação de Tutela 2 - Internação 3 - Busca e Apreensão 4 - Alvará de Soltura 5 - Revogação de Prisão 6 - Pedido de Alvará 
 			7 - Pedido de Liberação de Valores 8 - Processo com sessão/audiência designada. </br>
-			
+
+	   <div class="code-box">
 			<pre>&lt;tip:parametros nome="identificadorComunicacao" valor="xxxxxxxxxxxxxxx"/&gt;</pre>
+	   <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			<br>O parâmetro identificadorComunicacao pode ser utilizado no peticionamento intermediário para indicar a intenção de fechamento de um prazo específico. 
 			O conteúdo do campo deve ser o idAviso retornado na consulta de avisos pendentes. </br>
 			<br>O prazo referenciado pelo parâmetro acima deve estar com status Aberto. Caso este esteja com status Aguardando Abertura, o Eproc retornará a mensagem 
@@ -284,5 +325,6 @@
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
 </body>
 </html>
+
 
 
