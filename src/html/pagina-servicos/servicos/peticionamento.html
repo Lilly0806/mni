@@ -86,8 +86,14 @@
 		<p><strong>codigoLocalidade*: </strong>O código da divisão administrativo-jurisdicional a que pertence o órgão julgador. Ordinariamente, 
 		será a comarca, a zona eleitoral, a subseção judiciária, a turma recursal específica etc. 
 		<p><strong>orgaoColegiado*: </strong>O colegiado ao qual o órgão julgador esteja vinculado. Não aplicável em trâmite processual de 1ª instância. 
-		
+
+			<div class="code-box">
 		<pre><code>&lt;int:outroParametro nome="?" valor="?"&gt; <strong>*aqui</strong></code></pre> 
+			<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	  
 		<br>Elemento destinado a permitir a inclusão de parâmetros específicos do processo. 
 		
 
@@ -139,8 +145,13 @@
 		<p><strong>sexo: </strong>Sexo da pessoa. (Consegui peticionar sem indicar o sexo) 
 		<p><strong>nomeGenitor*: </strong>Nome do pai da pessoa individualizada. 
 		<p><strong>nomeGenitora*: </strong>Nome da mãe da pessoa individualizada. <p>
-		
-			<pre><code>&lt;int:documento codigoDocumento="?" emissorDocumento="?" tipoDocumento="?" nome="?"/&gt;</code></pre>	
+
+			<div class="code-box">
+	   <pre><code>&lt;int:documento codigoDocumento="?" emissorDocumento="?" tipoDocumento="?" nome="?"/&gt;</code></pre>	
+	  <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 		
 		<p><strong>codigoDocumento: </strong>Sequência de caracteres que tornam único o documento descrito sem os separadores característicos. 
 		<p><strong>emissorDocumento: </strong>Órgão emissor do documento de identificação. 
@@ -168,12 +179,24 @@
 		<p><strong>cep*:</strong>cep*: Atributo indicador do código de endereçamento postal do endereço no diretório nacional de endereços da ECT. 
 		O valor deverá ser uma sequência de 8 dígitos, sem qualquer separador. O atributo é opcional para permitir a apresentação de endereços desprovidos de 
 		CEP e de endereços internacionais. <p>
-		
+
+			<div class="code-box">
 			<pre><code>&lt;int: pessoaRelacionada modalidadeRelacionamento="?"&gt;*</code></pre>
-			Indicação da existência de um relacionamento pessoal independente de uma relação processual. Exemplo: tutoria legal, curadoria, sucessão etc. <p>
+			 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			
+			Indicação da existência de um relacionamento pessoal independente de uma relação processual. Exemplo: tutoria legal, curadoria, sucessão etc. <p>
+
+		<div class="code-box">
 			<pre><code>&lt;int:pessoaVinculada/&gt;*</code></pre>
-			Indicação da existência de um relacionamento entre uma autoridade e uma pessoa jurídica ou ente que ela representa. Exemplo: a escola é vinculada a seu diretor ou reitor. 
+	    <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	  
+		Indicação da existência de um relacionamento entre uma autoridade e uma pessoa jurídica ou ente que ela representa. Exemplo: a escola é vinculada a seu diretor ou reitor. 
 
 
 		<p><strong>escolaridade*: </strong>Indicação do nível de escolaridade da pessoa. 
@@ -187,8 +210,13 @@
 		<p><strong>interessePublico*: </strong>Elemento destinado a identificar se esta parte representa, em verdade, um interesse público abstrato cuja defesa está a 
 		cargo do Ministério Público ou da Defensoria Pública. Caso esteja presente, essa parte será tida como mero interesse público, tal como acontece nos processos propostos 
 		pelo MP, pela Defensoria Pública no caso de exercício de ações coletivas e de inquéritos. <p>
-		
-			<pre><code>&lt;int:advogado nome="?" inscricao="?" numeroDocumentoPrincipal="?" intimacao="?" tipoRepresentante="?"&gt;*</code></pre>
+
+			<div class="code-box">
+		<pre><code>&lt;int:advogado nome="?" inscricao="?" numeroDocumentoPrincipal="?" intimacao="?" tipoRepresentante="?"&gt;*</code></pre>
+		 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>		
 
 		<p><strong>nome: </strong>Nome do advogado ou do escritório de advocacia ou órgão de representação processual (MP, advocacia pública ou defensoria pública. 
 		A identificação relativa a se tratar de advogado ou de escritório de advocacia será feita pelo numeroDocumentoPrincipal, caso se trate de CPF, deverá ser tratado como 
@@ -217,8 +245,13 @@
 		um CEP válido. Caso não informado, assumir valor padão "BR" (Brazil). 
 		<p><strong>cep*: </strong>Atributo indicador do código de endereçamento postal do endereço no diretório nacional de endereços da ECT. O valor deverá ser uma sequência 
 		de 8 dígitos, sem qualquer separador. O atributo é opcional para permitir a apresentação de endereços desprovidos de CEP e de endereços internacionais. <p>
-		
+
+			<div class="code-box">
 			<pre><code>&lt;int:pessoaProcessualRelacionada/&gt;</code></pre>
+			 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			Pessoa relacionada com a parte em situações como as de representação e assistência dos pais, representação ou substituição processual em ações coletivas, tutela e curatela. 
 
 		
@@ -229,15 +262,25 @@
 		; TF (testemunha de fato); AT (assistente técnico); AS (assistente). 
 		<p><strong>situação*: </strong>Situação da parte no processo. 
 		<p><strong>complemento*: </strong>Elemento destinado a registrar informações complementares de qualquer natureza a respeito da parte. <p>
-		
+
+			<div class="code-box">
 					<pre><code>&lt;int:assunto principal="false"&gt;</code></pre>
+					 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 					Atributo que informa se o assunto referido é o assunto principal do processo. <p>
 
 			<strong>Preencher um destes dois serviços </strong>
 		
 		<p><strong>codigoNacional: </strong>Elemento destinado a que se informe o código de assunto existente na tabela nacional unificada decorrente da Resolução 65. <p>
-		
+
+			<div class="code-box">
 		<pre><code>&lt;int:assuntoLocal codigoAssunto="?" codigoPaiNacional="?" descricao="?"&gt;</code></pre>
+	  	 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 		
 		<p><strong>codigoAssunto:</strong> Atributo destinado a incluir a informação relativa ao código numérico utilizado localmente pelo tribunal. 
 		<p><strong>codigoPaiNacional: </strong>Atributo destinado à entrada do código de assunto nacional de que o assunto local é filho.  
@@ -247,12 +290,24 @@
 		
 		<p><strong>magistradoAtuante*: </strong>Elemento destinado a permitir a identificação de zero ou mais magistrados que tenham atuado no processo em referência 
 		proferindo julgamentos ou decisões conforme Resolução CNJ 46. 
-		
+
+			<div class="code-box">
 		<pre><code>&lt;int:processoVinculado numeroProcesso="?" vinculo="?"/ &gt;*</code></pre>
+	  	 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+			
 		Elemento destinado a permitir a indicação da existência de um ou mais processos judiciais vinculados. 
 		
 		<p><strong>prioridade*: </strong>Tipo de prioridade. São valores possíveis: - IDOSO: Idoso. REU_PRESO: Réu preso. PERECIMENTO: Doença Grave. MENOR: Menor de idade. PCD: Pessoa com deficiência.  
-		<pre><code>&lt;int:outroParametro nome="?" valor="?"/ &gt;*</code></pre>
+	
+	  <div class="code-box">
+	  <pre><code>&lt;int:outroParametro nome="?" valor="?"/ &gt;*</code></pre>
+				 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 		Elemento destinado a permitir a inclusão de parâmetros específicos do processo. 
 		
 		<p><strong>valorCausa*: </strong>Valor da causa. Não utilizar ponto e vírgula. (o valor 1054225 gerou o valor R$ 1.054.225,00) 
@@ -315,7 +370,12 @@
 		e, quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio 
 		equivocado da informação, de forma que as implementações cliente não devem contar com esse tipo de tratamento. 
 		
-		<pre><code>&lt;int:documentoVinculado/&gt;*</code></pre>
+		<div class="code-box">
+			<pre><code>&lt;int:documentoVinculado/&gt;*</code></pre>
+		 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 		Documento vinculado a este documento. 
 		
 		<p><strong>justiça*: </strong>Identifica o órgão ou segmento de Justiça. Podem ser: - 1: Supremo Tribunal Federal; - 2: Conselho Nacional de Justiça; 
@@ -324,19 +384,33 @@
 		<p><strong>tribunal*: </strong>Identifica o tribunal do respectivo segmento de Justiça. 
 		<p><strong>unidade*: </strong>Identifica a unidade de origem do processo judicial, observadas as estruturas administrativas de cada segmento de Justiça. 
 		<p><strong>tamanhoConteudo*: </strong>Quantidade aproximada, em bytes, do conteúdo do documento. <p>
-		
+
+			<div class="code-box">
 		<pre><code>&lt;int:outroParametro nome="?" valor="?"/&gt;*</code></pre>
-		<p>Elemento destinado a permitir a inclusão de parâmetros variados do tipo nome/valor. 
+				 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	  
+		Elemento destinado a permitir a inclusão de parâmetros variados do tipo nome/valor. 
 		
-		<p><strong>dataEnvio*: </strong>Data do envio na origem. 
-		
+		<p><strong>dataEnvio*: </strong>Data do envio na origem. </p>
+
+	  <div class="code-box">
 		<pre><code>&lt;tip:parametros nome="?" valor="?"/&gt;*</code></pre>
-		<p>Elemento destinado a permitir a inclusão de parâmetros variados do tipo nome/valor. 
+		  	 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	  
+	Elemento destinado a permitir a inclusão de parâmetros variados do tipo nome/valor. 
 		
 		
 		<p><strong>Parâmetros adicionais  </strong>
 		<br><strong>Prioridades que funcionam no 1g. </strong>
-			<pre><code>
+			
+		<div class="code-box"> 
+		<pre><code>
 		&lt;int:prioridade&gt;REU_PRESO&lt;/int:prioridade&gt;
 
 		&lt;int:prioridade&gt;PCD&lt;/int:prioridade&gt;
@@ -351,16 +425,27 @@
 
 		&lt;int:outroParametro nome="GrandeDevedor" valor="true"/&gt;
 		</code></pre>
+		 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 
 		<p><strong>No 2g só não funciona a tag </strong>
+			<div class="code-box">
 		<pre><code>
 		&lt;int:prioridade&gt;SEM_CONCILIACAO&lt;/int:prioridade&gt;
 		</code></pre>
+					 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 
 		
 		
 		<p><strong>As prioridades também funcionam se escritas dessa forma. Reu preso não testei. </strong><p>
-		<pre><code>
+
+		<div class="code-box">
+	  <pre><code>
 		&lt;outroParametro nome="prioridade" valor="PCD" /&gt;--&gt; 
 
 		&lt;outroParametro nome="prioridade" valor="PERECIMENTO" /&gt;--&gt; 
@@ -375,7 +460,11 @@
 		&lt;int:parametros nome="identProcuradorRepresentacao" valor="27717733846"/&gt; 
 
 		&lt;int:parametros nome="tipoIdentProcuradorRepresentacao" valor="CPF"/&gt;
-		</code></pre><p>
+		</code></pre>
+		 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 		
 		<br>Indica o peticionante quando a autenticação é feita com usuário de sistema. Não é obrigatório, mas é interessante que seja sempre preenchido. </br>
 
@@ -383,10 +472,14 @@
 
 		<br>Não está funcionando no colégio recursal (teste 26/08/2025) </br>
 
-		
-		<p><pre><code>
+		<div class="code-box">
+		<pre><code>
 			&lt;tip:parametros nome="CodigoControleExterno" valor="xxxxx"/&gt;
-			</code></pre></p>
+			</code></pre>
+	 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 
 		<p>Permite ao manifestante informar um código de controle gerado pelo seu sistema. Evita a entrega em duplicidade de uma manifestação. 
 		Se o valor for duplicado o sistema retorna o erro “Número de controle externo já cadastrado.” </p>
