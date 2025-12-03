@@ -101,7 +101,7 @@
 		<p><strong>documentoVinculado*: </strong>Documento vinculado a este documento. </p>
 
 	  <div class="code-box">
-			 <pre>&lt;int:documentoVinculado documentoVinculado="82400092"/&gt;</pre>
+			 <pre><code >&lt;int:documentoVinculado documentoVinculado="82400092"/&gt;</pre>
 <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
@@ -119,7 +119,7 @@
 		<p><strong>tamanhoConteudo*: </strong>Quantidade aproximada, em bytes, do conteúdo do documento. </p>
 
 	  <div class="code-box">
-		<pre>&lt;int:outroParametro nome="NomeDocumentoUsuario" valor="teste.pdf"/&gt; </pre>
+		<pre><code >&lt;int:outroParametro nome="NomeDocumentoUsuario" valor="teste.pdf"/&gt; </code></pre>
 	  <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
@@ -129,7 +129,7 @@
 		Caso não informado este parâmetro, o Eproc assumirá o nome id_externo_X.XXX como sendo o nome do arquivo. </br>
 
 	  <div class="code-box">
-		<pre>&lt;int:outroParametro nome="ObsDocumento" valor="ObsDocumentoTeste"/&gt; </pre>
+		<pre><code >&lt;int:outroParametro nome="ObsDocumento" valor="ObsDocumentoTeste"/&gt;  </code></pre>
 	   <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
@@ -138,14 +138,14 @@
 		<br>É possível também informar uma observação associada ao documento através do parâmetro ObsDocumento. Esse parâmetro é igualmente opcional. </br>
 
 	  <div class="code-box">
-		<pre>&lt;int:parametros nome="identProcuradorRepresentacao" valor="27717733846"/&gt; </pre>
+<pre><code >&lt;int:parametros nome="identProcuradorRepresentacao" valor="27717733846"/&gt;  </code></pre>
 		     <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
 		  <div class="code-box">
-			<pre>&lt;int:parametros nome="tipoIdentProcuradorRepresentacao" valor="CPF"/&gt;</pre>
+<pre><code >&lt;int:parametros nome="tipoIdentProcuradorRepresentacao" valor="CPF"/&gt; </code></pre>
 		   <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
@@ -158,12 +158,12 @@
 		<p><strong>dataEnvio*: </strong>A data do envio na origem.  Pode ser informada no formato AAAAMMDDHHMMSS. </p>
 	  
 		<div class="code-box">
-		<pre>
-			&lt;tip:outroParametro nome="identProcuradorSubstabelecido" valor="xxxxxxxxxxx"/&gt;  
-			&lt;tip:outroParametro nome="tipoIdentProcuradorSubstabelecido" valor="CPF"/&gt;  
-			&lt;tip:outroParametro nome="identParteSubstabelecimento" valor="27717733846"/&gt;  
-			&lt;tip:outroParametro nome="tipoSubstabelecimento" valor="C"/&gt;
-			</pre>
+		<pre><code >
+	&lt;tip:outroParametro nome="identProcuradorSubstabelecido" valor="xxxxxxxxxxx"/&gt;  
+	&lt;tip:outroParametro nome="tipoIdentProcuradorSubstabelecido" valor="CPF"/&gt;  
+	&lt;tip:outroParametro nome="identParteSubstabelecimento" valor="27717733846"/&gt;  
+	&lt;tip:outroParametro nome="tipoSubstabelecimento" valor="C"/&gt;
+		 </code></pre>
 	     <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
@@ -181,10 +181,10 @@
 		<p><strong>Outros Parâmetros </strong></p>
 
 	  <div class="code-box">
-			<pre>
-			<strong>Colocar abaixo da tag </strong>&lt;/tip:documentos&gt; 
-			&lt;int:parametros nome="prioridade" valor="X"/&gt;
-			</pre>
+		<pre><code>
+	<strong>Colocar abaixo da tag </strong>&lt;/tip:documentos&gt; 
+	&lt;int:parametros nome="prioridade" valor="X"/&gt;
+			 </code></pre>
 		   <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
@@ -195,7 +195,7 @@
 			7 - Pedido de Liberação de Valores 8 - Processo com sessão/audiência designada. </br>
 
 	   <div class="code-box">
-			<pre>&lt;tip:parametros nome="identificadorComunicacao" valor="xxxxxxxxxxxxxxx"/&gt;</pre>
+			<pre><code><&lt;tip:parametros nome="identificadorComunicacao" valor="xxxxxxxxxxxxxxx"/&gt; </code></pre>
 	   <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
@@ -204,19 +204,28 @@
 			O conteúdo do campo deve ser o idAviso retornado na consulta de avisos pendentes. </br>
 			<br>O prazo referenciado pelo parâmetro acima deve estar com status Aberto. Caso este esteja com status Aguardando Abertura, o Eproc retornará a mensagem 
 			“O Prazo ainda nao foi aberto. O parametro abrirPrazoAutomaticamente deve ser passado com o valor true para a abertura.” </br>
-			
-			<pre>
-			&lt;tip:parametros nome="identificadorComunicacao" valor="xxxxxxxxxxxxxxx"/&gt;  
-			&lt;tip:parametros nome="abrirPrazoAutomaticamente" valor="true"/&gt;
-			</pre>
+
+	   <div class="code-box">
+		<pre><code>
+	&lt;tip:parametros nome="identificadorComunicacao" valor="xxxxxxxxxxxxxxx"/&gt;  
+	&lt;tip:parametros nome="abrirPrazoAutomaticamente" valor="true"/&gt;
+		 </code></pre>
+	 <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			<br>Caso o manifestante deseje fechar o prazo, independente do prazo estar com status Aguardando Abertura ou Aberto, pode informar o 
 			parâmetro abrirPrazoAutomaticamente em conjunto com o identificadorComunicacao. </br>
 			
-			<pre>
-			&lt;tip:parametros nome="abrirPrazoAutomaticamente" valor="true"/&gt;
-			&lt;tip:parametros nome="identEncerraPrazos" valor="xxxxxxxxxxxxxxx"/&gt;  
-			
-			</pre>
+		<div class="code-box">
+  <pre><code>
+	&lt;tip:parametros nome="abrirPrazoAutomaticamente" valor="true"/&gt;
+	&lt;tip:parametros nome="identEncerraPrazos" valor="xxxxxxxxxxxxxxx"/&gt;  
+		  </code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			
 			<br>O parâmetro identEncerraPrazos pode ser utilizado para indicar a intenção de fechamento de todos os prazos relacionados a uma determinada parte. 
 			O conteúdo do campo deve ser o CPF ou CNPJ da parte cujos prazos relacionados deseja-se fechar no peticionamento. </br>
@@ -325,6 +334,7 @@
   <footer>© 2025 Tribunal de Justiça do Estado de São Paulo</footer>
 </body>
 </html>
+
 
 
 
