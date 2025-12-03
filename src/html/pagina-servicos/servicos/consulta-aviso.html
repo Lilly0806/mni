@@ -147,31 +147,70 @@
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
-  <p>
-  
+
+	  
+  <div class="code-box">
+  <pre><code>
 		<strong>&lt;tip:outroParametro nome="inibirPartes" valor="false"/&lt; (erro – não funciona) </strong>
-		<br>É possível omitir o retorno das partes de cada processo relacionado ao aviso. <p>
-		
+	  	</code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+		<br>É possível omitir o retorno das partes de cada processo relacionado ao aviso. 
+	
+
+	   <div class="code-box">
+  <pre><code>
 		<strong>&lt;tip:outroParametro nome="idAvisoFinal" valor="6000028"/&lt;</strong>
-		<br>É possível fazer um filtro pelo idAviso pelo número inteiro ou particionando só por dígito, por exemplo, utilizando o valor=”8” ou v alor=”28”<p>
+	  	</code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+		<br>É possível fazer um filtro pelo idAviso pelo número inteiro ou particionando só por dígito, por exemplo, utilizando o valor=”8” ou v alor=”28”
 		
 		
+		 <div class="code-box">
+  <pre><code>
 	<strong>&lt;tip:outroParametro nome="identificacaoParte" valor="36700046882"/&lt;</strong>
+	  	</code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	  
 		<br>É possível filtrar os processos por parte, deve-se informar o CPF ou CNPJ.<p> 
 		<br>Apesar da requisição ter retornado todos as movimentações dos processos referentes à parte, não trouxe número dos processos e outros dados que seriam relevantes. 
-		Esse parâmetro não funcionou em conjunto com outros parâmetros, como a data inicial e final e com os parâmetros adicionais. <p>
+		Esse parâmetro não funcionou em conjunto com outros parâmetros, como a data inicial e final e com os parâmetros adicionais. 
+			
 
+	  <div class="code-box">
+  <pre><code>
 		<strong>&lt;tip:outroParametro nome="limitarProcessos" valor="10"/&lt;</strong>
 		<strong>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&lt;</strong>
+	  	</code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 			<br>Em conjunto com o parâmetro identificacaoParte, opcionalmente é possível paginar os avisos pendentes usando os parâmetros limitarProcessos e paginaProcessosAtual.
-			Quando usados, ambos devem ser informados. A contagem das páginas começa em 0 (zero). <p>
+			Quando usados, ambos devem ser informados. A contagem das páginas começa em 0 (zero). 
+	  	
 			
-			<br>Por exemplo, para retornar do processo 11 ao 20: 
+			<p><br>Por exemplo, para retornar do processo 11 ao 20: </p>
+	   <div class="code-box">
+  <pre><code>
 			<strong>&lt;tip:outroParametro nome="limitarProcessos" valor="10">/&lt;</strong>
 			<br><strong>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&lt;</strong>
 
 			<p><strong><p>
   &lt;ns1:dataDisponibilizacao&gt;Data&lt;/ns1:dataDisponibilizacao&gt;</strong>
+					</code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 				<br>Essa tag de retorno se refere a data e hora em que o solicitante realizou a consulta no serviço consultarAvisosPendentes. <p>
 				
 		
