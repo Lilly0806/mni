@@ -25,3 +25,21 @@ function mostrarToast() {
 }
 
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const botoes = document.querySelectorAll(".btn-copiar");
+
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      const caixa = botao.closest(".code-container");
+      const codigo = caixa.querySelector("code").innerText;
+
+      navigator.clipboard.writeText(codigo);
+
+      // ALERTA SIMPLES
+      alert("Código copiado!");
+    });
+  });
+});
+
+
