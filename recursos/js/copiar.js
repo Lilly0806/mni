@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   botoes.forEach(botao => {
     botao.addEventListener("click", () => {
-      const caixa = botao.closest(".code-box", ".code-mini", ".code-container");
+      const caixa = botao.closest(".code-box");
       const codigo = caixa.querySelector("code").innerText;
 
       navigator.clipboard.writeText(codigo);
@@ -52,4 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Código copiado!");
     });
   });
+
 });
