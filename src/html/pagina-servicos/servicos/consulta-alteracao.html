@@ -54,43 +54,35 @@
 	<br>Retorna informações sobre possíveis alterações em um processo. A consulta só é permitida quando ao menos uma das partes está vinculada a um procurador;
 		caso contrário, o sistema responde com “Processo não encontrado”.<br></p>
 	
-	<p><strong>Parâmetros (*campos opcionais*): </strong>
-	<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou 
-	certificado digital. Visa tornar mais ágil o processo de autenticação, 
-	tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj.</br></p>
+	<strong>Parâmetros (*campos opcionais*): </strong>
+	
 	
 	<strong>Autenticação simples*</strong>
-	<br><strong>usuario:</strong> Identificação do usuário 
-		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) <p>
+	<br><strong>usuario:</strong> Identificação do usuário </br>
+		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha)</br> 
 		
-		<strong>Autenticação Certificada* </strong>
-		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. 
-		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
-		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
-		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.
-		<br><strong>codificacaoCadeiaCertificado:</strong> Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação,
-		de forma que as implementações cliente não devem contar com esse tipo de tratamento. <p>
+
 		
 		<strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às credenciais da pessoa solicitadora da autenticação. Alguns exemplos de uso: 
 		CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às credenciais institucionais da procuradoria. 
 		<br><strong>numeroProcesso:</strong>  Número do processo judicial. <p>
 		
 		<strong>Outros parâmetros (erro – não funciona) </strong>
-			<div class="code-box">
+			<div class="code-container">
 			<pre><code>&lt;tip:outroParametro nome="incluirHashCabecalho" valor="false"/&gt;</code></pre>
 				<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
-				<div class="code-box">
+				<div class="code-container">
 			<pre><code>&lt;tip:outroParametro nome="incluirHashMovimentacoes" valor="false"/&gt;</code></pre>
 					<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
 
-					<div class="code-box">
+					<div class="code-container">
 			<pre><code>&lt;tip:outroParametro nome="incluirHashDocumentos" valor="false"/&gt;</code></pre>
 						<button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
