@@ -65,74 +65,69 @@
 
     <p><strong>Descrição</strong>
 
-		<br>Permite consultar se há aviso processual pendente em relação a entidade consultante. 
-		Caso o consultante seja um representante processual, serão retornados todos os avisos de comunicação onde o destinatário seja a pessoa ou 
-		entidade cujo código identificador de representado foi informado pelo representante e, caso este não seja informado, serão retornados todos os avisos existentes 
-		nos quais o consultante atua como órgão de representação processual. Caso o consultante informe seu próprio código identificador, como representado, 
-		serão listados somente os avisos destinados a ele. 
-		
-		<p>Caso seja omitida a dataInicioConsulta, deverá retornar a lista de todos os avisos 
-		pendentes (ou seja, aqueles em relação aos quais ainda não houve ciência pelo comunicado). 
-		Caso já tenha havido a ciência (por consulta realizada com o uso da operação consultarTeorComunicacao ou por decurso do prazo legal de ciência), 
-		não deverá retornar o aviso. 
-</p>
+		<br>Permite consultar se há aviso processual pendente em relação a entidade consultante.  A consulta pode ser realizada de forma específica para uma parte representada
+		ou de forma genérica para processos nos quais o consultante atua como órgão de representação.</p>
 
-		<strong>Parâmetros (*Campos Opcionais*)</strong><p>
-		<br><strong>token*:</strong> Chave de autenticação concedida pelo sistema após autenticação prévia, feita por usuário/senha ou certificado digital. 
-		Visa tornar mais ágil o processo de autenticação, tornando desnecessário realizar o custoso procedimento de credenciamento a cada chamada de operação.cnj .
+
+		<strong>Parâmetros (*Campos Opcionais*)</strong>
+	
 
 		<p><strong>Autenticação simples* </strong>
-		<br><strong>usuario:</strong> Identificação do usuário 
-		<br><strong>senha:</strong> Senha do usuário (hash do dia, data + senha) <p>
- 
-		<br><strong>Autenticação Certificada*</strong> 
-		<br><strong>Assinatura:</strong> Hash da assinatura, em base64. 
-		<br><strong>dataAssinatura:</strong> Data e hora em que a assinatura se concretizou. 
-		<br><strong>cadeiaCertificado:</strong> Cadeia de certificação, no formato PEM ou, se indicado, no formato indicado no atributo codificacaoCertificado. 
-		<br><strong>algoritmo:</strong> A identificação do algoritmo de resumo matemático utilizado para criar a assinatura. Recomenda-se o tipo SHA-256.  
-		codificacaoCadeiaCertificado: Indica a codificação (PEM, DER etc.) de envio da cadeia de certificação. Por padrão, essa codificação deve ser a PEM, e, 
-	quando não indicada a informação, a implementação deve considerar que essa codificação foi utilizada. A implementação pode, mas não é obrigada a tolerar envio equivocado da informação, de forma que as implementações cliente não devem contar com esse tipo de tratamento. 
-<p>
-		
-		<strong>pessoaVinculada*:</strong> (erro – não funciona) Informação não obrigatória destinada a identificar possível CPF ou CNPJ que esteja vinculado às 
-		credenciais da pessoa solicitadora da autenticação. Alguns exemplos de uso: CNPJ do escritório ao qual o advogado esteja vinculado; CPF do procurador vinculado às c
-		redenciais institucionais da procuradoria. <p>
- 
-		<br><strong>idRepresentado*:</strong> (erro – não funciona) O identificador da pessoa representada pelo consultante a respeito da qual se realiza a 
-		consulta. O ideal é que o identificador seja o número de inscrição da pessoa representada no cadastro do Ministério da Fazenda (CPF ou CNPJ) ou o número RIC. 
-		O parâmetro é opcional. Caso não seja fornecido este parâmetro, a implementação deverá assegurar que todos os avisos existentes em processos nos quais o consultante 
-		atua como órgão de representação processual sejam retornados. (Lists - Bug #447). <p>
+		<br><strong>usuario:</strong> Identificação do usuário, fornecida pelo Tribunal de Justiça.
+		<br><strong>senha:</strong> Hash 256 composta por DD-MM-AAAA concatenada (validar)com a senha fornecida para o usuário. </p>
 
-		<br><strong>DataInicial *:</strong> Data inicial a partir da qual devem ser listados os avisos pendentes. Formato: AAAA-MM-DDThh:mm:ss. <p>
-		<br><strong>dataFinal *:</strong> Data final a partir da qual devem ser listados os avisos pendentes. Formato: AAAA-MM-DDThh:mm:ss.<p> 
-		<br><strong>tipoPendencia *:</strong> PC, PR ou AM 
-		<br>PC = pendente de ciência, PR = pendente de resposta e AM = ambos. <p>
-		<br><strong>tipoAviso:</strong> tipo de aviso pendente, informar um tipo por vez <p>
-		<br>CIT = citação, INT = intimação, IDP = intimação de despacho, IDC = intimação de decisão, IAD = intimação de audiência, IST = intimação de sentença, 
-		IAC = intimação de acórdão,  
-		<br>NOT = notificação (Notifica a distribuição de processo), VIS = vista para manifestação, URG = urgente, PTA = pauta de julgamento/audiência. <p>
+	
  
-		<br>Todos os tipos de eventos estão associados com intimações no sistema, exceto o NOT e PTA. O NOT é disparado toda vez que é protocolado 
-		um processo em que a entidade é parte e o PTA é disparado após o evento "Expedida/certificada a comunicação eletrônica" gerada automaticamente com o fechamento da pauta. 
-</p>
+		<br><strong>idRepresentado*:</strong>Nesse campo pode ser inserido o CNPJ ou CPF (revisar CPF!!) da parte representada a respeito da qual se realiza a consulta.
+	    O elemento é opcional e, caso não seja inserido, serão exibidos todos os avisos pendentes em relação a processos em que o consultante atua como órgão de representação.. 
+
+		<p></p><br><strong>DataInicial *:</strong>Data inicial a partir da qual devem ser listados os avisos pendentes. Deve ser informada no formato AAAA-MM-DDThh:mm:ss±hh:mm.
+  		<br><strong>Exemplo:</strong>2025-11-30T14:22:00-03:00.</br></p>
+			
+		<p><br><strong>dataFinal *:</strong>Data final até a qual devem ser listados os avisos pendentes. Deve ser informada no formato AAAA-MM-DDThh:mm:ss±hh:mm.</br>
+		<br><strong>Exemplo:</strong>2025-12-30T14:22:00-03:00.</br></p>
+			
+		<br><strong>tipoPendencia *:</strong> PC, PR ou AM 
+		<br>PC = pendente de ciência, PR = pendente de resposta e AM = ambos.
+	  
+		<p><<br><strong>tipoAviso:</strong> Elemento parametrizável pelo Tribunal de Justiça que filtra qual é o tipo de aviso que a entidade consultante pode consultar, como por exemplo:</br>
+		<br>CIT = citação, INT = intimação, IDP = intimação de despacho, IDC = intimação de decisão, IAD = intimação de audiência, IST = intimação de sentença, 
+		IAC = intimação de acórdão.</br>  
+		<br>NOT = notificação (Notifica a distribuição de processo), VIS = vista para manifestação, URG = urgente, PTA = pauta de julgamento/audiência.</p>
+ 
+		<p><br>Todos os tipos de eventos estão associados com intimações no sistema, exceto o NOT e PTA. O NOT é disparado toda vez que é protocolado um processo em que a entidade é parte e o
+		PTA é disparado após o evento "Expedida/certificada a comunicação eletrônica" gerada automaticamente com o fechamento da pauta. </br></p>
 		
 		<strong>Lists Bug #628</strong> 
 		<br>AM (Não encontrei erros) 
 		<br>PC (Não encontrei erros) 
-		<br>PR (Prazos já abertos continuam aparecendo na resposta como ag. abertura) 
-		<p>
+		<br>PR (Prazos já abertos continuam aparecendo na resposta como ag. abertura)</br>
 		
-		<br><strong>Outros parâmetros</strong>
+		
+		<p><br><strong>Parâmetros Adicionais</strong></p>
+
+	  				<div class="code-box">
 					<pre><code>&lt;tip:outroParametro nome="todosPrazos" valor="true"/&gt;</code></pre>
+	<button class="btn-copiar">
+	  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+	</button>
+		</div>
 
-		<br>Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e false: retorna situação Aguardando Abertura. <p>
-		
+		<br>Elemento booleano (true ou false) que, quando true retorna a situação Aberto e Aguardando Abertura. Quando false, retorna a situação Aguardando Abertura
+Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e false: retorna situação Aguardando Abertura </br>
+
+	  						<div class="code-box">
 							<pre><code>&lt;tip:outroParametro nome="informacoesDetalhadas" valor="true"/&gt;</code></pre>
+								<button class="btn-copiar">
+ 				 <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+				</button>
+				</div>
 
-			<br>Retorna detalhes, true retorna as informações identificadorMovimento, descricaoMovimento, dataHoraMovimento, codigoMovimento, codigoCNJ, prazo e status. </br><p>
+			<br>Elemento booleano (true ou false) que quando true retorna o as seguintes informações: dentificadorMovimento, descricaoMovimento, dataHoraMovimento, codigoMovimento, codigoCNJ, prazo e status.</br>
 			
-
-        
+			<p><Strong>Exemplo: </Strong></p>
+	  
+      <div class="code-box">  
 			<pre><code>
 &lt;ns1:outroParametro nome="identificadorMovimento" valor="2"/&gt;
 &lt;ns1:outroParametro nome="descricaoMovimento" valor="Expedida/certificada a intimação eletrônica - Vista ao MP para Parecer"/&gt;
@@ -142,43 +137,71 @@
 &lt;ns1:outroParametro nome="prazo" valor="10"/&gt;
 &lt;ns1:outroParametro nome="status" valor="Aguardando Abertura"/&gt;
   </code></pre>
-  <p>
+		  <button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
   
-		<strong>&lt;tip:outroParametro nome="inibirPartes" valor="false"/&lt; (erro – não funciona) </strong>
-		<br>É possível omitir o retorno das partes de cada processo relacionado ao aviso. <p>
-		
-		<strong>&lt;tip:outroParametro nome="idAvisoFinal" valor="6000028"/&lt;</strong>
-		<br>É possível fazer um filtro pelo idAviso pelo número inteiro ou particionando só por dígito, por exemplo, utilizando o valor=”8” ou v alor=”28”<p>
-		
-		
-	<strong>&lt;tip:outroParametro nome="identificacaoParte" valor="36700046882"/&lt;</strong>
-		<br>É possível filtrar os processos por parte, deve-se informar o CPF ou CNPJ.<p> 
-		<br>Apesar da requisição ter retornado todos as movimentações dos processos referentes à parte, não trouxe número dos processos e outros dados que seriam relevantes. 
-		Esse parâmetro não funcionou em conjunto com outros parâmetros, como a data inicial e final e com os parâmetros adicionais. <p>
 
-		<strong>&lt;tip:outroParametro nome="limitarProcessos" valor="10"/&lt;</strong>
-		<strong>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&lt;</strong>
+		<div class="code-box">
+		<pre><code><strong>&lt;tip:outroParametro nome="idAvisoFinal" valor="6000028"/&gt;</strong></code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	  
+		<br>Para os casos em que o volume de avisos consultados é muito grande, é possível efetuar um filtro pelo dígito final do idAviso. Isto pode ser feito através do parâmetro idAvisoFinal.
+	  Por exemplo, a consulta listada a seguir retornará apenas os avisos com final 0. Desta forma, é possível particionar o resultado em 10 efetuando consultas sucessivas 
+	  com parâmetro idAvisoFinal variando de 0 a 9. Em casos extremos, é possível particionar o retorno em 100, variando o parâmetro idAvisoFinal de 00 a 99</br>
+		
+
+	  <div class="code-box">
+		<pre><code><strong>&lt;tip:outroParametro nome="identificacaoParte" valor="36700046882"/&gt;</strong></code></pre>
+		  </code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+	   
+		<br>Apesar da requisição ter retornado todos as movimentações dos processos referentes à parte, não trouxe número dos processos e outros dados que seriam relevantes.
+	  Esse parâmetro não funcionou em conjunto com outros parâmetros, como a data inicial e final e com os parâmetros adicionais.
+
+	  <div class="code-box">
+		<pre><code>
+		<strong>&lt;tip:outroParametro nome="limitarProcessos" valor="10"/&gt;</strong>
+		<br><strong>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&gt;</strong></br>
+		</code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
+		  
 			<br>Em conjunto com o parâmetro identificacaoParte, opcionalmente é possível paginar os avisos pendentes usando os parâmetros limitarProcessos e paginaProcessosAtual.
-			Quando usados, ambos devem ser informados. A contagem das páginas começa em 0 (zero). <p>
+	  Quando usados, ambos devem ser informados. A contagem das páginas começa em 0 (zero).
 			
-			<br>Por exemplo, para retornar do processo 11 ao 20: 
-			<strong>&lt;tip:outroParametro nome="limitarProcessos" valor="10">/&lt;</strong>
-			<br><strong>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&lt;</strong>
+			<br><strong>Por exemplo, para retornar do processo 11 ao 20:</strong> </br>
+	  <div class="code-box">
+		  <pre><code>
+			&lt;tip:outroParametro nome="limitarProcessos" valor="10">/&gt;
+			<br>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&gt;>
+			  </code></pre>
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 
-			<p><strong><p>
-  &lt;ns1:dataDisponibilizacao&gt;Data&lt;/ns1:dataDisponibilizacao&gt;</strong>
+	  <div class="code-box">
+			<pre><code><strong> &lt;ns1:dataDisponibilizacao&gt;Data&lt;/ns1:dataDisponibilizacao&gt;</strong></code></pre
+<button class="btn-copiar">
+  <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
+</button>
+	</div>
 				<br>Essa tag de retorno se refere a data e hora em que o solicitante realizou a consulta no serviço consultarAvisosPendentes. <p>
 				
 		
 
 
-<script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
+
 
 			<strong>Requisição</strong>
 	
@@ -220,15 +243,7 @@
 </button>
 	</div>
 
-<p>
 
-  <script>
-	function copiarCodigo(id) {
-  const codigo = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado!");
-	}
-	</script>
 
   
 		<strong>Resposta</strong>
@@ -300,9 +315,10 @@
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
 </button>
 	</div>
-</p>
 
 
+<div id="toast-copy" class="toast-copy"></div>
+<script src="../../../../recursos/js/copiar.js"></script>
 		
 
   </main>
