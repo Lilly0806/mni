@@ -116,7 +116,7 @@
 		<br>Elemento booleano (true ou false) que, quando true retorna a situação Aberto e Aguardando Abertura. Quando false, retorna a situação Aguardando Abertura
 Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e false: retorna situação Aguardando Abertura </br>
 
-	  						<div class="code-box">
+	  						<div class="code-container">
 							<pre><code>&lt;tip:outroParametro nome="informacoesDetalhadas" valor="true"/&gt;</code></pre>
 								<button class="btn-copiar">
  				 <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
@@ -127,7 +127,7 @@ Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e
 			
 			<p><Strong>Exemplo: </Strong></p>
 	  
-      <div class="code-box">  
+      <div class="code-container">  
 			<pre><code>
 &lt;ns1:outroParametro nome="identificadorMovimento" valor="2"/&gt;
 &lt;ns1:outroParametro nome="descricaoMovimento" valor="Expedida/certificada a intimação eletrônica - Vista ao MP para Parecer"/&gt;
@@ -143,7 +143,7 @@ Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e
 	</div>
   
 
-		<div class="code-box">
+		<div class="code-container">
 		<pre><code><strong>&lt;tip:outroParametro nome="idAvisoFinal" valor="6000028"/&gt;</strong></code></pre>
 <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
@@ -155,7 +155,7 @@ Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e
 	  com parâmetro idAvisoFinal variando de 0 a 9. Em casos extremos, é possível particionar o retorno em 100, variando o parâmetro idAvisoFinal de 00 a 99</br>
 		
 
-	  <div class="code-box">
+	  <div class="code-container">
 		<pre><code><strong>&lt;tip:outroParametro nome="identificacaoParte" valor="36700046882"/&gt;</strong></code></pre>
 		  </code></pre>
 <button class="btn-copiar">
@@ -166,7 +166,7 @@ Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e
 		<br>Apesar da requisição ter retornado todos as movimentações dos processos referentes à parte, não trouxe número dos processos e outros dados que seriam relevantes.
 	  Esse parâmetro não funcionou em conjunto com outros parâmetros, como a data inicial e final e com os parâmetros adicionais.
 
-	  <div class="code-box">
+	  <div class="code-container">
 		<pre><code>
 		<br><strong>&lt;tip:outroParametro nome="limitarProcessos" valor="10"/&gt;</strong></br>
 		<br><strong>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&gt;</strong></br>
@@ -180,7 +180,7 @@ Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e
 	  Quando usados, ambos devem ser informados. A contagem das páginas começa em 0 (zero).
 			
 			<br><strong>Por exemplo, para retornar do processo 11 ao 20:</strong> </br>
-	  <div class="code-box">
+	  <div class="code-container">
 		  <pre><code>
 			<br>&lt;tip:outroParametro nome="limitarProcessos" valor="10">/&gt;</br>
 			<br>&lt;tip:outroParametro nome="paginaProcessosAtual" valor="1"/&gt;></br>
@@ -190,7 +190,7 @@ Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e
 </button>
 	</div>
 
-	  <div class="code-box">
+	  <div class="code-container">
 			<pre><code><strong> &lt;ns1:dataDisponibilizacao&gt;Data&lt;/ns1:dataDisponibilizacao&gt;</strong></code></pre>
 <button class="btn-copiar">
   <img src="../../../../recursos/img/copiar.jpg" alt="Copiar código">
