@@ -428,4 +428,6 @@ img {
    background: #1449ff; 
 }
 
-
+.texto-doc p {
+  padding-left: 15px;
+}
