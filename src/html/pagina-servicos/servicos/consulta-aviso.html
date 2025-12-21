@@ -65,44 +65,54 @@
 
     <p><strong>Descrição</strong>
 
-		<br>Permite consultar se há aviso processual pendente em relação a entidade consultante.  A consulta pode ser realizada de forma específica para uma parte representada
+		<br>Permite consultar se há aviso processual pendente para a entidade consultante.  A consulta pode ser realizada de forma específica para uma parte representada
 		ou de forma genérica para processos nos quais o consultante atua como órgão de representação.</p>
 
 
-		<p><strong>Parâmetros (*Campos Opcionais*)</strong></p>
+		<p><strong>Parâmetros</strong></p>
 	
+		<p><strong>Campos Opcionais</strong></p>
 
 		<p><strong>Autenticação simples* </strong>
 		<br><strong>usuario:</strong> Identificação do usuário, fornecida pelo Tribunal de Justiça.
 		<br><strong>senha:</strong> Hash 256 composta por DD-MM-AAAA concatenada (validar)com a senha fornecida para o usuário. </p>
 
 
- 		<p><strong>idRepresentado*:</strong>Nesse campo pode ser inserido o CNPJ ou CPF (revisar CPF!!) da parte representada a respeito da qual se realiza a consulta.
-	    O elemento é opcional e, caso não seja inserido, serão exibidos todos os avisos pendentes em relação a processos em que o consultante atua como órgão de representação. </p>
+ 		<p><strong>idRepresentado:</strong> Campo opcional destinado à informação do CNPJ da entidade em nome da qual a consulta é realizada.
+Caso não seja informado, serão retornados todos os avisos pendentes relativos a processos em que o consultante atua como órgão de representação.</p>
 
-		<p><strong>DataInicial *:</strong>Data inicial a partir da qual devem ser listados os avisos pendentes. Deve ser informada no formato AAAA-MM-DDThh:mm:ss±hh:mm.
-  		<br><strong>Exemplo:</strong>2025-11-30T14:22:00-03:00.</p>
+		<p><strong>DataInicial :</strong> Campo opcional que indica a data a partir da qual devem ser listados os avisos pendentes. Deve ser informada no formato AAAA-MM-DDThh:mm:ss±hh:mm.
+  		<br><strong>Exemplo: </strong>2025-11-30T14:22:00-03:00.</p>
 			
-		<p><strong>dataFinal *:</strong>Data final até a qual devem ser listados os avisos pendentes. Deve ser informada no formato AAAA-MM-DDThh:mm:ss±hh:mm.
+		<p><strong>dataFinal :</strong> Campo opcional que indica a data final até a qual devem ser listados os avisos pendentes. Deve ser informada no formato AAAA-MM-DDThh:mm:ss±hh:mm.
 		<br><strong>Exemplo:</strong>2025-12-30T14:22:00-03:00.</p>
 			
-		<p><strong>tipoPendencia *:</strong> PC, PR ou AM 
+		<p><strong>tipoPendencia :</strong> PC, PR ou AM 
 		<br>PC = pendente de ciência, PR = pendente de resposta e AM = ambos.
 	  
-		<p><strong>tipoAviso:</strong> Elemento parametrizável pelo Tribunal de Justiça que filtra qual é o tipo de aviso que a entidade consultante pode consultar, como por exemplo:</br>
-		<br>CIT = citação, INT = intimação, IDP = intimação de despacho, IDC = intimação de decisão, IAD = intimação de audiência, IST = intimação de sentença, 
-		IAC = intimação de acórdão.</br>  
-		<br>NOT = notificação (Notifica a distribuição de processo), VIS = vista para manifestação, URG = urgente, PTA = pauta de julgamento/audiência.</p>
- 
-		<p>Todos os tipos de eventos estão associados com intimações no sistema, exceto o NOT e PTA. O NOT é disparado toda vez que é protocolado um processo em que a entidade é parte e o
-		PTA é disparado após o evento "Expedida/certificada a comunicação eletrônica" gerada automaticamente com o fechamento da pauta. </p>
-		
-		<p>
-    <strong>Lists Bug #628</strong> 
-		<br>AM (Não encontrei erros) 
-		<br>PC (Não encontrei erros) 
-		<br>PR (Prazos já abertos continuam aparecendo na resposta como ag. abertura)</br>
-		</p>
+<p>
+  <strong>tipoAviso:</strong> Elemento que filtra o tipo de aviso que a entidade consultante pode consultar. Os valores possíveis são:
+  <br><strong>CIT</strong> – Citação
+  <br><strong>INT</strong> – Intimação
+  <br><strong>IDP</strong> – Intimação de despacho
+  <br><strong>IDC</strong> – Intimação de decisão
+  <br><strong>IAD</strong> – Intimação de audiência
+  <br><strong>IST</strong> – Intimação de sentença
+  <br><strong>IAC</strong> – Intimação de acórdão
+  <br><strong>NOT</strong> – Notificação (distribuição de processo)
+  <br><strong>VIS</strong> – Vista para manifestação
+  <br><strong>URG</strong> – Urgente
+  <br><strong>PTA</strong> – Pauta de julgamento ou audiência
+</p>
+
+<p>
+  Todos os tipos de eventos estão associados a intimações no sistema, exceto <strong>NOT</strong> e <strong>PTA</strong>.
+  O aviso <strong>NOT</strong> é disparado sempre que é protocolado um processo em que a entidade figure como parte.
+  O aviso <strong>PTA</strong> é disparado após o evento <em>"Expedida/certificada a comunicação eletrônica"</em>,
+  gerado automaticamente com o fechamento da pauta.
+</p>
+
+	
 		
 		<p><br><strong>Parâmetros Adicionais</strong></p>
 
@@ -113,8 +123,7 @@
 	</button>
 		</div>
 
-		<p>Elemento booleano (true ou false) que, quando true retorna a situação Aberto e Aguardando Abertura. Quando false, retorna a situação Aguardando Abertura
-Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e false: retorna situação Aguardando Abertura </p>
+		<p>Elemento booleano (true ou false) que, quando true retorna a situação Aberto e Aguardando Abertura. Quando false, retorna a situação Aguardando Abertura</p>
 
 	  						<div class="code-container">
 							<pre><code><strong>&lt;tip:outroParametro nome="informacoesDetalhadas" valor="true"/&gt;</strong></code></pre>
@@ -150,7 +159,7 @@ Retorna todos os prazos, true: retorna situação Aberto e Aguardando Abertura e
 </button>
 	</div>
 	  
-		<p>Para os casos em que o volume de avisos consultados é muito grande, é possível efetuar um filtro pelo dígito final do idAviso. Isto pode ser feito através do parâmetro idAvisoFinal.
+		<p>Para os casos em que o volume de avisos consultados é muito grande, é possível efetuar um filtro pelo dígito final do idAviso. Isso pode ser feito através do parâmetro idAvisoFinal.
 	  Por exemplo, a consulta listada a seguir retornará apenas os avisos com final 0. Desta forma, é possível particionar o resultado em 10 efetuando consultas sucessivas 
 	  com parâmetro idAvisoFinal variando de 0 a 9. Em casos extremos, é possível particionar o retorno em 100, variando o parâmetro idAvisoFinal de 00 a 99</p>
 		
